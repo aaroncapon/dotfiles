@@ -167,6 +167,7 @@ if [ "$HOSTNAME" == "doubleAron" ]; then
     # added by Anaconda2 4.3.1 installer
     export PATH="/home/aaron/anaconda2/bin:$PATH"
 
+    export PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] :\w \[\033[01;33m\]$(__git_ps1)\[\033[01;34m\] \[\033[00m\] \n\[\033[01;32m\]  ↳\[\033[00m\] ' 
 #If on home computer
 elif [ "$HOSTNAME" == "dubsAron" ]; then
 
@@ -176,6 +177,7 @@ elif [ "$HOSTNAME" == "dubsAron" ]; then
     alias webserver='python -m SimpleHTTPServer'
     alias pi_connect='ssh pi@192.168.0.181'
 
+    export PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] :\w \[\033[01;33m\]$(__git_ps1)\[\033[01;34m\] \[\033[00m\] \n\[\033[01;32m\]  ↳\[\033[00m\] ' 
 elif [ "$HOSTNAME" == "smiRR-GPU" ]; then
     
     alias root='root -l'
@@ -191,6 +193,7 @@ elif [ "$HOSTNAME" == "smiRR-GPU" ]; then
 
     # added by Anaconda2 4.4.0 installer
     export PATH="/home/aaron/anaconda2/bin:$PATH"
+    export PS1='\[\033[01;33m\]\u@\h\[\033[01;34m\] :\w \[\033[01;33m\]$(__git_ps1)\[\033[01;34m\] \[\033[00m\] \n\[\033[01;32m\]  ↳\[\033[00m\] ' 
 fi
 
 #alias VIMTASTIC='SET-TITLE "vim" &&  echo "Title set" && vim'
@@ -281,9 +284,6 @@ fi
 #if [ -f /home/aaron/.hub/etc/hub.bash_completeion.sh ]; then
 #  . /home/aaron/.hub/etc/hub.bash_completion.sh
 #fi
-
-#export PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\]:\w\[\033[01;33m\]$(__git_ps1)\[\033[01;34m\] \$\[\033[00m\]' 
-export PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] :\w \[\033[01;33m\]$(__git_ps1)\[\033[01;34m\] \[\033[00m\] \n\[\033[01;32m\]  ↳\[\033[00m\] ' 
 
 #Colourised Man page
 export LESS_TERMCAP_mb=$'\E[01;34m'
