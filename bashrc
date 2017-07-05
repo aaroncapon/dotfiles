@@ -176,6 +176,21 @@ elif [ "$HOSTNAME" == "dubsAron" ]; then
     alias webserver='python -m SimpleHTTPServer'
     alias pi_connect='ssh pi@192.168.0.181'
 
+elif [ "$HOSTNAME" == "smiRR-GPU" ]; then
+    
+    alias root='root -l'
+    alias STANDARDENV='source activate standard'
+    alias SSHSMI='ssh -X acapon@smilx0.smi.oeaw.ac.at'
+    alias SFTPSMI='sftp acapon@smilx0.smi.oeaw.ac.at'
+    alias SSHHEPHY='ssh -X acapon@heplx01.oeaw.ac.at'
+    alias PID='cd /home/aaron/LHC16q/PID/'
+    alias REWEIGHT='cd /home/aaron/LHC16q/covariateReweighting/'
+
+    export PATH=/usr/local/cuda/bin:$PATH
+    export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+
+    # added by Anaconda2 4.4.0 installer
+    export PATH="/home/aaron/anaconda2/bin:$PATH"
 fi
 
 #alias VIMTASTIC='SET-TITLE "vim" &&  echo "Title set" && vim'
