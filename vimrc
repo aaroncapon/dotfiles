@@ -7,13 +7,9 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
-"
-"let g:ycm_confirm_extra_conf = 0 
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-
-"Plugin 'Valloric/YouCompleteMe'
 
 " End configuration, makes the plugins available
 call vundle#end()
