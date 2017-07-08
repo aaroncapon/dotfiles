@@ -178,12 +178,8 @@ elif [ "$HOSTNAME" == "dubsAron" ]; then
     alias pi_connect='ssh pi@192.168.0.181'
 
     export PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] :\w \[\033[01;33m\]$(__git_ps1)\[\033[01;34m\] \[\033[00m\] \n\[\033[01;32m\]  ↳\[\033[00m\] ' 
-<<<<<<< HEAD
     
-### GPU computer
-=======
 #If on GPU computer
->>>>>>> a284383743822a8dbd041c5604b834c2d3e33164
 elif [ "$HOSTNAME" == "smiRR-GPU" ]; then
     
     alias root='root -l'
