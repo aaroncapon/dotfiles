@@ -149,7 +149,7 @@ if [ "$HOSTNAME" == "doubleAron" ]; then
     #alias SEARCHALI='. /home/aaron/.scripts/FINDALI.sh'
     alias CDLMEE='cd /home/aaron/alice/ali-master/AliPhysics/PWGDQ/dielectron/'
     alias REWEIGHT='cd /home/aaron/analyses/LHC15g3a3/dataChecks/reweighting/'
-    alias ANALYSIS='cd /home/aaron/analyses/LHC16q/'
+    alias LHC16q='cd /home/aaron/analyses/LHC16q/'
 
     alias BACKUPDOCSlx0='rsync -avzPh --max-size=300M  --delete-after --stats /home/aaron/Documents/ acapon@smilx0.smi.oeaw.ac.at:Documents/'
     alias BACKUPANALYSISlx0='rsync -avzPh --max-size=300M --delete-after --stats --exclude 'LHC16q/QA/trainResults'/home/aaron/analyses/ acapon@smilx0.smi.oeaw.ac.at:analyses/'
@@ -178,8 +178,12 @@ elif [ "$HOSTNAME" == "dubsAron" ]; then
     alias pi_connect='ssh pi@192.168.0.181'
 
     export PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] :\w \[\033[01;33m\]$(__git_ps1)\[\033[01;34m\] \[\033[00m\] \n\[\033[01;32m\]  ↳\[\033[00m\] ' 
+<<<<<<< HEAD
     
 ### GPU computer
+=======
+#If on GPU computer
+>>>>>>> a284383743822a8dbd041c5604b834c2d3e33164
 elif [ "$HOSTNAME" == "smiRR-GPU" ]; then
     
     alias root='root -l'
@@ -189,6 +193,7 @@ elif [ "$HOSTNAME" == "smiRR-GPU" ]; then
     alias SSHHEPHY='ssh -X acapon@heplx01.oeaw.ac.at'
     alias PID='cd /home/aaron/LHC16q/PID/'
     alias REWEIGHT='cd /home/aaron/LHC16q/covariateReweighting/'
+    alias LHC16q='cd LHC16q'
 
     export PATH=/usr/local/cuda/bin:$PATH
     export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
