@@ -140,7 +140,7 @@ alias SSHHEPHY='ssh -X acapon@heplx01.oeaw.ac.at'
 alias WEATHER='curl wttr.in/vienna'
 
 #If on work computer
-if [ "$HOSTNAME" == "doubleAron" ]; then
+if [ "$HOSTNAME" == "doubleAron" && "$USER" == "aaron"]; then
 
     ##Alias to enter ALICE environment
     alias ALIENV_myaliases='cd /home/aaron/alice && alienv --shellrc enter AliPhysics/latest-ali-master'
@@ -187,7 +187,7 @@ elif [ "$HOSTNAME" == "dubsAron" ]; then
     export PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] :\w \[\033[01;33m\]$(__git_ps1)\[\033[01;34m\] \[\033[00m\] \n\[\033[01;32m\]  ↳\[\033[00m\] ' 
     
 #If on GPU computer
-elif [ "$HOSTNAME" == "smiRR-GPU" ]; then
+elif [ "$HOSTNAME" == "smiRR-GPU" && "$USER" == "aaron"]; then
     
     alias root='root -l'
     alias STANDARDENV='source activate standard'
