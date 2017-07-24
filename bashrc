@@ -140,7 +140,7 @@ alias SSHHEPHY='ssh -X acapon@heplx01.oeaw.ac.at'
 alias WEATHER='curl wttr.in/vienna'
 
 #If on work computer
-if [ "$HOSTNAME" == "doubleAron" && "$USER" == "aaron"]; then
+if [ "$HOSTNAME" == "doubleAron" ]; then
 
     ##Alias to enter ALICE environment
     alias ALIENV_myaliases='cd /home/aaron/alice && alienv --shellrc enter AliPhysics/latest-ali-master'
@@ -172,6 +172,7 @@ if [ "$HOSTNAME" == "doubleAron" && "$USER" == "aaron"]; then
     export PATH="/home/aaron/anaconda2/bin:$PATH"
 
     export PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] :\w \[\033[01;33m\]$(__git_ps1)\[\033[01;34m\] \[\033[00m\] \n\[\033[01;32m\]  ↳\[\033[00m\] ' 
+    export WHICHBASH="Work computer bash profile loaded."
 #If on home computer
 elif [ "$HOSTNAME" == "dubsAron" ]; then
 
@@ -185,9 +186,10 @@ elif [ "$HOSTNAME" == "dubsAron" ]; then
     export PATH=$PATH:/home/aaron/.scripts:
 
     export PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] :\w \[\033[01;33m\]$(__git_ps1)\[\033[01;34m\] \[\033[00m\] \n\[\033[01;32m\]  ↳\[\033[00m\] ' 
+    export WHICHBASH="Home computer bash profile loaded."
     
 #If on GPU computer
-elif [ "$HOSTNAME" == "smiRR-GPU" && "$USER" == "aaron"]; then
+elif [ "$HOSTNAME" == "smiRR-GPU" ]; then
     
     alias root='root -l'
     alias STANDARDENV='source activate standard'
@@ -204,6 +206,7 @@ elif [ "$HOSTNAME" == "smiRR-GPU" && "$USER" == "aaron"]; then
     # added by Anaconda2 4.4.0 installer
     export PATH="/home/aaron/anaconda2/bin:$PATH"
     export PS1='\[\033[01;33m\]\u@\h\[\033[01;34m\] :\w \[\033[01;33m\]$(__git_ps1)\[\033[01;34m\] \[\033[00m\] \n\[\033[01;32m\]  ↳\[\033[00m\] ' 
+    export WHICHBASH="GPU computer bash profile loaded."
 fi
 
 #alias VIMTASTIC='SET-TITLE "vim" &&  echo "Title set" && vim'
