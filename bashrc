@@ -147,7 +147,7 @@ if [ "$HOSTNAME" == "doubleAron" ]; then
     alias root='root -l'
     alias BUILDALI='cd ~/alice/ali-master/ && aliBuild -z -w ../sw -d build AliPhysics --disable GEANT3,GEANT4_VMC,fastjet,DPMJET; alert "AliBuild finished"'
     #alias SEARCHALI='. /home/aaron/.scripts/FINDALI.sh'
-    alias CDLMEE='cd /home/aaron/alice/ali-master/AliPhysics/PWGDQ/dielectron/'
+    alias CDLMEE='cd /home/aaron/alice/AliPhysics/PWGDQ/dielectron/'
     alias REWEIGHT='cd /home/aaron/analyses/LHC15g3a3/dataChecks/reweighting/'
     alias LHC16q='cd /home/aaron/analyses/LHC16q/'
 
@@ -169,7 +169,7 @@ if [ "$HOSTNAME" == "doubleAron" ]; then
 
     source /home/aaron/root6/bin/thisroot.sh
     # added by Anaconda2 4.3.1 installer
-    export PATH="/home/aaron/anaconda2/bin:$PATH"
+    #export PATH="/home/aaron/anaconda2/bin:$PATH"
 
     export PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] :\w \[\033[01;33m\]$(__git_ps1)\[\033[01;34m\] \[\033[00m\] \n\[\033[01;32m\]  ↳\[\033[00m\] ' 
     export WHICHBASH="Work computer bash profile loaded."
