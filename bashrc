@@ -147,7 +147,7 @@ if [ "$HOSTNAME" == "doubleAron" ]; then
     alias root='root -l'
     alias BUILDALI='cd ~/alice/ali-master/ && aliBuild -z -w ../sw -d build AliPhysics --disable GEANT3,GEANT4_VMC,fastjet,DPMJET; alert "AliBuild finished"'
     #alias SEARCHALI='. /home/aaron/.scripts/FINDALI.sh'
-    alias CDLMEE='cd /home/aaron/alice/AliPhysics/PWGDQ/dielectron/'
+    alias CDLMEE='cd /home/aaron/alice/ali-master/AliPhysics/PWGDQ/dielectron/'
     alias REWEIGHT='cd /home/aaron/analyses/LHC15g3a3/dataChecks/reweighting/'
     alias LHC16q='cd /home/aaron/analyses/LHC16q/'
 
