@@ -160,14 +160,19 @@ if [ "$HOSTNAME" == "doubleAron" ]; then
     alias SLEEP="systemctl suspend"
     alias GITHELP="cat ~/.gitCommands"
     alias FIXINTERNET="sudo systemctl restart network-manager.service"
+
+    alias TMUXCHEATSHEET='less ~/.tmux_cheatsheet'
+
     ##Add path to custom scripts and root
     export PATH=$PATH:/home/aaron/.scripts:
 
+
     source /home/aaron/root6/bin/thisroot.sh
     # added by Anaconda2 4.3.1 installer
-    export PATH="/home/aaron/anaconda2/bin:$PATH"
+    #export PATH="/home/aaron/anaconda2/bin:$PATH"
 
     export PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] :\w \[\033[01;33m\]$(__git_ps1)\[\033[01;34m\] \[\033[00m\] \n\[\033[01;32m\]  ↳\[\033[00m\] ' 
+    export WHICHBASH="Work computer bash profile loaded."
 #If on home computer
 elif [ "$HOSTNAME" == "dubsAron" ]; then
 
@@ -177,7 +182,11 @@ elif [ "$HOSTNAME" == "dubsAron" ]; then
     alias webserver='python -m SimpleHTTPServer'
     alias pi_connect='ssh pi@192.168.0.181'
 
+    ##Add path to custom scripts and root
+    export PATH=$PATH:/home/aaron/.scripts:
+
     export PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] :\w \[\033[01;33m\]$(__git_ps1)\[\033[01;34m\] \[\033[00m\] \n\[\033[01;32m\]  ↳\[\033[00m\] ' 
+    export WHICHBASH="Home computer bash profile loaded."
     
 #If on GPU computer
 elif [ "$HOSTNAME" == "smiRR-GPU" ]; then
@@ -198,6 +207,7 @@ elif [ "$HOSTNAME" == "smiRR-GPU" ]; then
     # added by Anaconda2 4.4.0 installer
     export PATH="/home/aaron/anaconda2/bin:$PATH"
     export PS1='\[\033[01;33m\]\u@\h\[\033[01;34m\] :\w \[\033[01;33m\]$(__git_ps1)\[\033[01;34m\] \[\033[00m\] \n\[\033[01;32m\]  ↳\[\033[00m\] ' 
+    export WHICHBASH="GPU computer bash profile loaded."
 fi
 
 #alias VIMTASTIC='SET-TITLE "vim" &&  echo "Title set" && vim'
