@@ -1,0 +1,3 @@
+
+#Load the same aliases for all sessions
+Rint.Load: ${HOME}/dotfiles/rootalias.C
