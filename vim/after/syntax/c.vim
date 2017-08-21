@@ -25,7 +25,7 @@ if !exists("c_no_cern_root")
    syn keyword	cType      	    char_t Marker_t Double32_t Float16_t Long64_t
    syn keyword	cType           Short_t Stat_t Style_t Text_t UShort_t Option_t
 "Additionally added ROOT classes
-   syn keyword  cType           TTreeStream TAxis
+   syn keyword  cType           TTreeStream TAxis TGaxis
    syn keyword  cType           Char_t UChar_t 
 "AliPhysics classes
    syn keyword  cType           AliVEventHandler AliVEvent AliVTrack AliVVertex AliVParticle
