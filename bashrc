@@ -199,6 +199,7 @@ elif [ "$HOSTNAME" == "smiRR-GPU" ]; then
     alias PID='cd /home/aaron/LHC16q/PID/'
     alias REWEIGHT='cd /home/aaron/LHC16q/covariateReweighting/'
     alias LHC16q='cd LHC16q'
+    alias ROOT6='. /home/aaron/root/bin/thisroot.sh'
 
     export PATH=/usr/local/cuda/bin:$PATH
     export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
