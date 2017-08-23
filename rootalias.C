@@ -6,13 +6,13 @@ TH1::AddDirectory(kFALSE);
 TH1::SetDefaultSumw2()
 
 //Format 1D histograms
-//Just plot colours
+//Just format colours
 void setup1Dhist(TH1* hist, Int_t colour){
     hist->SetMarkerStyle(21);
     hist->SetMarkerColor(colour);
     hist->SetLineColor(colour);
 }
-//Add titles
+//Format colours, and add titles
 void setup1Dhist(TH1* hist, Int_t colour, TString xAxis, TString yAxis){
     hist->SetMarkerStyle(21);
     hist->SetMarkerColor(colour);
@@ -20,6 +20,13 @@ void setup1Dhist(TH1* hist, Int_t colour, TString xAxis, TString yAxis){
     hist->GetYaxis()->SetTitle(yAxis);
     hist->GetXaxis()->SetTitle(xAxis);
 }
+
+//Useable colours
+//I.e. darker and can be used in presentations
+Int_t kGREEN = kGreen + 2; 
+Int_t kCYAN = kCyan + 2;
+Int_t kMAGENTA = kMagenta + 2;
+Int_t kORANGE = kOrange + 7;
 
 //Enforce ALICE formatting
 void SetStyle() {
