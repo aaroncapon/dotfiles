@@ -1,5 +1,10 @@
 
 
+//Do not add histograms by name to TDirectory
+TH1::AddDirectory(kFALSE);
+//Automatically create weights file for histograms
+TH1::SetDefaultSumw2()
+
 //Format 1D histograms
 //Just plot colours
 void setup1Dhist(TH1* hist, Int_t colour){
