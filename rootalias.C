@@ -71,3 +71,49 @@ void SetStyle() {
 }
 
 
+
+//Calculate significance, as per dielectron analysis definiton
+TH1F* calcSignificance(const TH1F* signal, const TH1F* backgr){
+
+    TH1F* significance = dynamic_cast<TH1F*>(signal->Clone("significance"));
+    
+    Float_t errorSignal, errorBackgr;
+    Float_t valueSignal, valueBackgr;
+    Float_t binWidth;
+    Float_t preScaling;
+    Float_t finalError;
+
+    for(Int_t i = 1; i <= significance->GetNbinsX(); i++){
+
+        //Get S and B values
+        valueSignal = signal->GetBinContent(i);
+        valueBackgr = backgr->GetBinContent(i);
+        errorSignal = signal->GetBinError(i);
+        errorBackgr = backgr->GetBinError(i);
+        binWidth = significance->GetBinWidth(i);
+
+        //Find significance
+        if( (valueSignal == 0) && (valueBackgr == 0)){
+            significance->SetBinContent(i, 0);
+            significance->SetBinError(i, 0.000001);
+        }
+        else{
+            preScaling = valueSignal/TMath::Sqrt(valueSignal + (2*valueBackgr));
+            significance->SetBinContent(i, preScaling/TMath::Sqrt(binWidth));
+            //significance->SetBinContent(i, preScaling);
+
+
+            finalError = 0.5*(TMath::Sqrt((errorSignal*errorSignal) + (16*errorBackgr*errorSignal) - 16*(errorBackgr*errorBackgr))/(errorSignal+(2*errorBackgr)));
+            if(finalError != 0){
+                significance->SetBinError(i, finalError);
+            }else{
+                significance->SetBinError(i, 0);
+            }
+        }
+            //std::cout << "Sig: "       << valueSignal << ", backgr: " << valueBackgr << std::endl;
+            //std::cout << "Bin width: " << binWidth << ", Bin " << i << " value: " << preScaling/TMath::Sqrt(binWidth) << std::endl;
+    }
+
+    
+    return significance;
+}
