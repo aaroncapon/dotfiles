@@ -1,9 +1,5 @@
 
 
-//Do not add histograms by name to TDirectory
-TH1::AddDirectory(kFALSE);
-//Automatically create weights file for histograms
-TH1::SetDefaultSumw2()
 
 //Format 1D histograms
 //Just format colours
