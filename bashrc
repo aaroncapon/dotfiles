@@ -163,6 +163,8 @@ if [ "$HOSTNAME" == "doubleAron" ]; then
 
     alias TMUXCHEATSHEET='less ~/.tmux_cheatsheet'
 
+    ##Enable thefuck command
+    eval $(thefuck --alias)
     ##Add path to custom scripts and root
     export PATH=$PATH:/home/aaron/.scripts:
 
