@@ -25,10 +25,10 @@ Int_t kMAGENTA = kMagenta + 2;
 Int_t kORANGE = kOrange + 7;
 
 //Function to format lower plot when taking ratios
-void formatRatioPlot(TH1F* hist, TString yAxis){
+void formatRatioPlot(TH1* hist, TString yAxis){
 
     hist->SetTitle("");
-    hist->GetYaxis()->SetTitle("US/LS");
+    hist->GetYaxis()->SetTitle(yAxis);
     hist->GetYaxis()->SetNdivisions(505);
     hist->GetYaxis()->SetTitleSize(20);
     hist->GetYaxis()->SetTitleFont(43);
