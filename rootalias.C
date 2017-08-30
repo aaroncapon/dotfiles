@@ -25,17 +25,6 @@ Int_t kMAGENTA = kMagenta + 2;
 Int_t kORANGE = kOrange + 7;
 
 
-//Enforce ALICE formatting
-/*void SetStyle() {
-    //gStyle->Reset("Plain");
-    
-    std::cout << "ALICE style set!" << std::endl;
-
-
-}*/
-
-
-
 //Calculate significance, as per dielectron analysis definiton
 TH1F* calcSignificance(const TH1F* signal, const TH1F* backgr){
 
