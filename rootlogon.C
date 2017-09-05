@@ -1,6 +1,8 @@
 //Root logon script
 {
-    std::cout << "New ROOT session. ALICE style plotting set." << std::endl;
+    std::cout << "New ROOT session." << std::endl;
+
+    std::cout << "ALICE style plotting set." << std::endl;
 
     gStyle->SetOptTitle(1);
     gStyle->SetOptStat(0);
@@ -38,8 +40,25 @@
 
 
     //Automatically create weights object for histograms
+    std::cout << "Sumw2 objects automatically created." << std::endl;
     TH1::SetDefaultSumw2();
+
     //Do not add histograms by name to TDirectory
-    TH1::AddDirectory(kFALSE);
+    //std::cout << "Histograms not added to Tdirectory list" << std::endl;
+    //TH1::AddDirectory(kFALSE);
+
+    //Useable colours
+    //I.e. darker and can be used in presentations
+    Int_t kGREEN = kGreen + 2; 
+    Int_t kCYAN = kCyan + 2;
+    Int_t kMAGENTA = kMagenta + 2;
+    Int_t kORANGE = kOrange + 7;
+    std::cout << "Custom capitilised colours loaded." << std::endl;
+
+    //Force kBird(blue/yellow) palette
+    gStyle->SetPalette(kBird);
+
+    std::cout << std::endl;
+
 
 }

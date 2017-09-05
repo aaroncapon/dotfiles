@@ -17,24 +17,21 @@ void format1Dhist(TH1* hist, Int_t colour, TString xAxis, TString yAxis){
     hist->GetXaxis()->SetTitle(xAxis);
 }
 
-//Useable colours
-//I.e. darker and can be used in presentations
-Int_t kGREEN = kGreen + 2; 
-Int_t kCYAN = kCyan + 2;
-Int_t kMAGENTA = kMagenta + 2;
-Int_t kORANGE = kOrange + 7;
 
 //Function to format lower plot when taking ratios
 void formatRatioPlot(TH1* hist, TString yAxis){
 
     hist->SetTitle("");
+
     hist->GetYaxis()->SetTitle(yAxis);
+    hist->GetYaxis()->CenterTitle();
     hist->GetYaxis()->SetNdivisions(505);
     hist->GetYaxis()->SetTitleSize(20);
     hist->GetYaxis()->SetTitleFont(43);
     hist->GetYaxis()->SetTitleOffset(1.55);
     hist->GetYaxis()->SetLabelFont(43);
     hist->GetYaxis()->SetLabelSize(15);
+
     hist->GetXaxis()->SetTitleSize(20);
     hist->GetXaxis()->SetTitleFont(43);
     hist->GetXaxis()->SetTitleOffset(4.);
