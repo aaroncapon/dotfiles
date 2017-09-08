@@ -107,3 +107,45 @@ TH1F* calcDiElecSignificance(const TH1F* signal, const TH1F* backgr){
     
     return significance;
 }
+
+//Common TLatex objects
+TLatex* getTexTitle(Float_t xPos, Float_t yPos){
+    
+    TLatex* tex = new TLatex(xPos, yPos, "ALICE Work in Progress");
+    tex->SetNDC();
+    tex->SetTextSize(0.04);
+    tex->SetTextFont(42);
+
+    return tex;
+}
+TLatex* getTexSystem(Float_t xPos, Float_t yPos, Bool_t isMC = kFALSE){
+    
+    TString description = "p-Pb, #sqrt{#it{s}_{NN}} = 5.02 TeV";
+    if(isMC == kTRUE){
+       description += ", DPMJET";
+    }
+    TLatex* tex = new TLatex(xPos, yPos, description);
+    tex->SetNDC();
+    tex->SetTextSize(0.03);
+    tex->SetTextFont(42);
+
+    return tex;
+}
+TLatex* getTexKinematics(Float_t xPos, Float_t yPos){
+    
+    TLatex* tex = new TLatex(xPos, yPos, "0.2 < p_{T} < 10 GeV/#it{c}, |#eta| < 0.8");
+    tex->SetNDC();
+    tex->SetTextSize(0.03);
+    tex->SetTextFont(42);
+
+    return tex;
+}
+TLatex* getTexPairCuts(Float_t xPos, Float_t yPos){
+    
+    TLatex* tex = new TLatex(xPos, yPos, "#theta_{ee} > 0.05 for m_{ee} < 0.05 GeV/#it{c}^{2}");
+    tex->SetNDC();
+    tex->SetTextSize(0.03);
+    tex->SetTextFont(42);
+
+    return tex;
+}
