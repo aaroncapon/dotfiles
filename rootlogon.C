@@ -5,7 +5,7 @@
     std::cout << "ALICE style plotting set." << std::endl;
 
     gStyle->SetOptTitle(1);
-    gStyle->SetOptStat(0);
+    //gStyle->SetOptStat(0);
     gStyle->SetPalette(56); //54
     gStyle->SetCanvasColor(10);
     gStyle->SetCanvasBorderMode(0);
