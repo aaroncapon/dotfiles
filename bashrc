@@ -161,6 +161,9 @@ if [ "$HOSTNAME" == "doubleAron" ]; then
     alias GITHELP="cat ~/.gitCommands"
     alias FIXINTERNET="sudo systemctl restart network-manager.service"
 
+    #Create rsync alias 
+    alias CP='rsync -ah --progress'
+
     alias TMUXCHEATSHEET='less ~/.tmux_cheatsheet'
 
     ##Enable thefuck command
