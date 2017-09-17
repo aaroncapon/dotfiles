@@ -108,7 +108,7 @@ set statusline+=\ %p%%
 set statusline+=\ %l:%c
 "set statusline+=\ 
 
-"execute pathogen#infect()
+execute pathogen#infect()
 
 highlight ColorColumn ctermbg=magenta
 call matchadd('ColorColumn', '\%81v', 100)
