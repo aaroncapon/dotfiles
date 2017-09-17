@@ -1,5 +1,5 @@
 " Vundle vimrc
-set nocompatible              " be iMproved, required
+"set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -51,7 +51,12 @@ set updatetime=250
 let g:gitgutter_highlight_lines=1
 set diffopt+=vertical "Gdiff split vertical not horizontal
 
-syntax on
+"If loop prevents mutliple calls to syntax on (can mess up highlighting)
+if !exists("g:syntax_on")
+    syntax enable
+endif
+
+
 set nu "Number lines
 set rnu "Relative number lines
 "set spell spelllang=en_gb
@@ -103,15 +108,7 @@ set statusline+=\ %p%%
 set statusline+=\ %l:%c
 "set statusline+=\ 
 
-execute pathogen#infect()
-"autocmd vimenter * NERDTree "Auto start NERDtree
-"autocmd vimenter * wincmd p "Move cursor to editing window
-"Close vim when NERDtree only buffer left open
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-"let NerdTreeMinimalUI = 1
-"let NerdTreeDirArrows = 1
-"let g:NERDTreeWinSize=25
-
+"execute pathogen#infect()
 
 highlight ColorColumn ctermbg=magenta
 call matchadd('ColorColumn', '\%81v', 100)
@@ -120,7 +117,7 @@ call matchadd('ColorColumn', '\%81v', 100)
 let g:rainbow_active = 1
 
 "Solarized colour scheme settings
-syntax on
+"syntax on
 let g:solarized_termcolors=256
 set t_Co=256 
 set background=dark
