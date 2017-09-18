@@ -33,6 +33,23 @@ set showbreak=\\\\\
 nnoremap <expr> j v:count ? 'j' : 'gj'
 nnoremap <expr> k v:count ? 'k' : 'gk'
 
+"------- Prevent use of arrow keys  --------
+"Normal mode arrow keys
+nnoremap <Left> :echo "No left for you!"<CR>
+nnoremap <Right> :echo "No right for you!"<CR>
+nnoremap <Up> :echo "No up for you!"<CR>
+nnoremap <Down> :echo "No down for you!"<CR>
+"Visual mode arrow keys
+vnoremap <Left> :<C-u>echo "No left for you!"<CR>
+vnoremap <Right> :<C-u>echo "No right for you!"<CR>
+vnoremap <Up> :<C-u>echo "No up for you!"<CR>
+vnoremap <Down> :<C-u>echo "No down for you!"<CR>
+"Insert mode arrow keys (doesn't work..?)
+inoremap <Left> <nop>
+inoremap <Right> <nop>
+inoremap <Up> <nop>
+inoremap <Down> <nop>
+
 
 "Enables possible files to be listed when using tab completion with :e <filename-partial><<TAB>>
 set wildmenu
