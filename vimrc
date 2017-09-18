@@ -1,5 +1,4 @@
 " Vundle vimrc
-"set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -9,8 +8,6 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 call vundle#end()
-
-filetype plugin indent on "This is required for YCM
 
 " Enable folding. These options slowed vim down quite a bit
 "Left out for now as not used so often
@@ -28,6 +25,7 @@ set pastetoggle=<F2>
 
 "Show lnewrapping by indicating \\ for wrapped line
 set showbreak=\\\\\
+
 "Allow single j and k movements to treat wrapped lines separately.
 "Strict linewise movement resumed when preceeded with a count.
 nnoremap <expr> j v:count ? 'j' : 'gj'
@@ -57,16 +55,22 @@ if !exists("g:syntax_on")
 endif
 
 
-set nu "Number lines
 set rnu "Relative number lines
-"set spell spelllang=en_gb
+
+"New tab formatting
+filetype plugin indent on
+" show existing tab with 4 spaces width
 set tabstop=4
+" when indenting with '>', use 4 spaces width
 set shiftwidth=4
-set softtabstop=4
-set textwidth =79
+" On pressing tab, insert 4 spaces
 set expandtab
-set autoindent "Keep same indentation on new as on previous line
-set smartindent
+"S
+set autoindent
+
+
+
+set textwidth =79
 set fileformat=unix
 "set ignorecase smartcase "Case insesitive searching
 set cursorline "Underline the current line
@@ -75,7 +79,7 @@ set hlsearch "Highlight all matches when searching
 
 let mapleader=","
 nnoremap <leader><space> :nohlsearch<CR>
-set mouse=a
+set mouse=a "Enable mouse usage
 set breakindent "wrapped lines follow indentation
 
 "Shortcuts to switch through buffers with ctrl
@@ -108,13 +112,16 @@ set statusline+=\ %p%%
 set statusline+=\ %l:%c
 "set statusline+=\ 
 
-execute pathogen#infect()
 
 highlight ColorColumn ctermbg=magenta
 call matchadd('ColorColumn', '\%81v', 100)
 
 "Colour-coded brackets
 let g:rainbow_active = 1
+
+
+"Needed for solarized colourscheme
+execute pathogen#infect()
 
 "Solarized colour scheme settings
 "syntax on
