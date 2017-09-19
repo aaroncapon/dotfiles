@@ -1,30 +1,50 @@
-" Vundle vimrc
-filetype off                  " required
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
+"--------Sections---------
+"0. General Options
+"1. Mouse and clipboard settings
+"2. Movement keys
+"3. Formatting options
+"4. Search options
+"5. Stautsline modifications
+"6. Gitgutter and solarized addons
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
 
-Plugin 'VundleVim/Vundle.vim'
+"""""""""""""""""""""""""""""""""
+"0.General Options
 
-call vundle#end()
+"If loop prevents mutliple calls to syntax on (can mess up highlighting)
+if !exists("g:syntax_on")
+    syntax enable
+endif
 
-" Enable folding. These options slowed vim down quite a bit
-"Left out for now as not used so often
-"set foldmethod=syntax
-"set foldlevel=2
+"Define new map leader
+let mapleader=","
 
-set completeopt=longest,menuone
+highlight ColorColumn ctermbg=magenta
+call matchadd('ColorColumn', '\%81v', 100)
 
-set clipboard+=unnamed
-set paste
+"Colour-coded brackets
+let g:rainbow_active = 1
+
 set go+=a
 
-"Enabling easy toggle of paste mode
-set pastetoggle=<F2>
 
-"Show lnewrapping by indicating \\ for wrapped line
-set showbreak=\\\\\
+"""""""""""""""""""""""""""""""""
+"1.Mouse and clipboard settings
+
+set clipboard+=unnamed
+"Enable mouse usage
+set mouse=a 
+"Key to alievate shitty pasting in vim (press F5 before pasting into vim. Then F5 afterwards to resume normal indentation.
+nnoremap <F5> :set invpaste paste?<Enter>
+inoremap <F5> <C-O><F5>
+
+
+"""""""""""""""""""""""""""""""""
+"2.Movement keys
 
 "Allow single j and k movements to treat wrapped lines separately.
 "Strict linewise movement resumed when preceeded with a count.
@@ -47,33 +67,18 @@ inoremap <Left> <nop>
 inoremap <Right> <nop>
 inoremap <Up> <nop>
 inoremap <Down> <nop>
+"Shortcuts to switch through buffers with ctrl
+map <C-J> :bnext<CR>
+map <C-K> :bprev<CR>
+"Switch between open windows
+map <C-h> <C-W><C-h>
+map <C-l> <C-W><C-l>
 
 
-"Enables possible files to be listed when using tab completion with :e <filename-partial><<TAB>>
-set wildmenu
-set wildmode=full
-"Allow fuzzy searching down through folders
-set path+=**
-
-"Alignment addon (easy align)
-" Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
-
-"Decrease time between updates (done for GitGutter) (default 4000, i.e. 4 seconds)
-set updatetime=250
-let g:gitgutter_highlight_lines=1
-set diffopt+=vertical "Gdiff split vertical not horizontal
-
-"If loop prevents mutliple calls to syntax on (can mess up highlighting)
-if !exists("g:syntax_on")
-    syntax enable
-endif
-
-
-set rnu "Relative number lines
-
+"""""""""""""""""""""""""""""""""
+"3.Formatting options
+"Relative number lines
+set rnu 
 "New tab formatting
 filetype plugin indent on
 " show existing tab with 4 spaces width
@@ -82,44 +87,50 @@ set tabstop=4
 set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
-"S
+"Maintain indent from current line to next line
 set autoindent
-
-
-
+"wrapped lines follow indentation
+set breakindent 
+"Show lnewrapping by indicating \\ for wrapped line
+set showbreak=\\\\\
+"Alignment addon (easy align)
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 set textwidth =79
 set fileformat=unix
 "set ignorecase smartcase "Case insesitive searching
 set cursorline "Underline the current line
-set incsearch "Search as characters are entered
-set hlsearch "Highlight all matches when searching
 
-let mapleader=","
+
+"""""""""""""""""""""""""""""""""
+"4.Mouse and clipboard settings
+
+"Highlight all matches when searching
+set hlsearch 
 nnoremap <leader><space> :nohlsearch<CR>
-set mouse=a "Enable mouse usage
-set breakindent "wrapped lines follow indentation
+set incsearch "Search as characters are entered
+"Enable autocompletion
+"longest inserts the longest common text
+"menu ensures a menu still pops up, even if only one selection is shown
+set completeopt=longest,menuone
+"Enables possible files to be listed when using tab completion with :e <filename-partial><<TAB>>
+set wildmenu
+set wildmode=full
+"Allow fuzzy searching down through folders
+set path+=**
 
-"Shortcuts to switch through buffers with ctrl
-map <C-J> :bnext<CR>
-map <C-K> :bprev<CR>
-"Switch between open windows
-map <C-h> <C-W><C-h>
-map <C-l> <C-W><C-l>
 
-"Key to alievate shitty pasting in vim (press F5 before pasting into vim. Then F5 afterwards to resume normal indentation.
-nnoremap <F5> :set invpaste paste?<Enter>
-imap <F5> <C-O><F5>
-set pastetoggle=<F5>
+"""""""""""""""""""""""""""""""""
+"5.Statusline modification
 
-"" --------- Status line shizzle -------
 set laststatus=2 "Always show statusline (deafault: only shown when files open > 1)
-"%<number. indicates background colour for that piece of information
 set statusline=
 set statusline+=%7*\[%n]
 set statusline+=%#PmenuSel#
 set statusline+=\ %F
 set statusline+=\ %{fugitive#statusline()}
-""set statusline+=%m\
 set statusline+=%=
 set statusline+=%#CursorColumn#
 set statusline+=\ %y
@@ -127,21 +138,19 @@ set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
 set statusline+=\[%{&fileformat}\]
 set statusline+=\ %p%%
 set statusline+=\ %l:%c
-"set statusline+=\ 
 
 
-highlight ColorColumn ctermbg=magenta
-call matchadd('ColorColumn', '\%81v', 100)
+"""""""""""""""""""""""""""""""""
+"6.GitGutter and solarized options
 
-"Colour-coded brackets
-let g:rainbow_active = 1
-
+"Decrease time between updates (done for GitGutter) (default 4000, i.e. 4 seconds)
+set updatetime=250
+let g:gitgutter_highlight_lines=1
+set diffopt+=vertical "Gdiff split vertical not horizontal
 
 "Needed for solarized colourscheme
 execute pathogen#infect()
-
 "Solarized colour scheme settings
-"syntax on
 let g:solarized_termcolors=256
 set t_Co=256 
 set background=dark
