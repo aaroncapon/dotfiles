@@ -7,7 +7,12 @@
 "3. Formatting options                                 "
 "4. Search options                                     "
 "5. Stautsline modifications                           "
-"6. Gitgutter and solarized addons                     "
+"6. Plugins                                            "
+"6. Plugins                                            "
+"   - Plug                                             "
+"   - Gitgutter                                        "
+"   - Solarized                                        "
+"   - EasyAlign                                        "
 "                                                      "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -27,8 +32,6 @@ let mapleader=","
 highlight ColorColumn ctermbg=magenta
 call matchadd('ColorColumn', '\%81v', 100)
 
-"Colour-coded brackets
-let g:rainbow_active = 1
 
 "Require certain number of lines to be shown below/above cursor
 set scrolloff=4
@@ -106,11 +109,6 @@ set autoindent
 set breakindent 
 "Show lnewrapping by indicating \\ for wrapped line
 set showbreak=\\\\\
-"Alignment addon (easy align)
-" Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
 set textwidth =79
 set fileformat=unix
 set cursorline "Underline the current line
@@ -170,18 +168,42 @@ set statusline+=\ %l:%c
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-"6.GitGutter and solarized options                     " 
+"6.Plugins                                             " 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+call plug#begin('~/.vim/plugged/')
+
+Plug 'tpope/vim-fugitive'
+
+Plug 'airblade/vim-gitgutter'
+
+Plug 'altercation/vim-colors-solarized'
+
+Plug 'junegunn/vim-easy-align'
+
+Plug 'luochen1990/rainbow'
+
+"Initialise plug system
+call plug#end()
+
+"--------GitGutter-------
 "Decrease time between updates (done for GitGutter) (default 4000, i.e. 4 seconds)
 set updatetime=250
 let g:gitgutter_highlight_lines=1
 set diffopt+=vertical "Gdiff split vertical not horizontal
 
-"Needed for solarized colourscheme
-execute pathogen#infect()
-"Solarized colour scheme settings
+"--------Solarized-------
 let g:solarized_termcolors=256
 set t_Co=256 
 set background=dark
 colorscheme solarized
+
+"--------EasyAlgin--------
+"Alignment addon (easy align)
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
+"Colour-coded brackets
+let g:rainbow_active = 1
