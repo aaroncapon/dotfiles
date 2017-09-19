@@ -1,19 +1,20 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-"
-"--------Sections---------
-"0. General Options
-"1. Mouse and clipboard settings
-"2. Movement keys
-"3. Formatting options
-"4. Search options
-"5. Stautsline modifications
-"6. Gitgutter and solarized addons
-"
+"                                                      "
+"--------Sections---------                             "
+"0. General Options                                    "
+"1. Mouse and clipboard settings                       "
+"2. Movement keys                                      "
+"3. Formatting options                                 "
+"4. Search options                                     "
+"5. Stautsline modifications                           "
+"6. Gitgutter and solarized addons                     "
+"                                                      "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
-"""""""""""""""""""""""""""""""""
-"0.General Options
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"0.General Options                                     "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "If loop prevents mutliple calls to syntax on (can mess up highlighting)
 if !exists("g:syntax_on")
@@ -29,11 +30,20 @@ call matchadd('ColorColumn', '\%81v', 100)
 "Colour-coded brackets
 let g:rainbow_active = 1
 
+"Require certain number of lines to be shown below/above cursor
+set scrolloff=4
+"Do not redraw screen whilst executing macros
+set lazyredraw
+"Dictate location of new windows after splits
+set splitright
+set splitbelow
+
 set go+=a
 
 
-"""""""""""""""""""""""""""""""""
-"1.Mouse and clipboard settings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"1.Mouse and clipboard settings                        "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set clipboard+=unnamed
 "Enable mouse usage
@@ -43,8 +53,9 @@ nnoremap <F5> :set invpaste paste?<Enter>
 inoremap <F5> <C-O><F5>
 
 
-"""""""""""""""""""""""""""""""""
-"2.Movement keys
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"2.Movement keys                                       "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "Allow single j and k movements to treat wrapped lines separately.
 "Strict linewise movement resumed when preceeded with a count.
@@ -75,8 +86,10 @@ map <C-h> <C-W><C-h>
 map <C-l> <C-W><C-l>
 
 
-"""""""""""""""""""""""""""""""""
-"3.Formatting options
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"3.Formatting options                                  "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 "Relative number lines
 set rnu 
 "New tab formatting
@@ -100,12 +113,12 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 set textwidth =79
 set fileformat=unix
-"set ignorecase smartcase "Case insesitive searching
 set cursorline "Underline the current line
 
 
-"""""""""""""""""""""""""""""""""
-"4.Mouse and clipboard settings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"4.Search options                                      "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "Highlight all matches when searching
 set hlsearch 
@@ -120,10 +133,26 @@ set wildmenu
 set wildmode=full
 "Allow fuzzy searching down through folders
 set path+=**
+"Case insenstive searching
+set ignorecase
+"Disable ignorecase IF capitals used in search pattern
+set smartcase
+
+"Center page when searching for matching bracket
+nnoremap } }zz
+nnoremap { {zz
+
+"Show buffers, then press number of wanted buffer
+nnoremap <leader><leader> :buffers<cr>:buffer<space>
+
+"Easy acces to Explore and Sexplore
+noremap <leader>e :Explore<cr>
+noremap <leader>s :Sexplore<cr>
 
 
-"""""""""""""""""""""""""""""""""
-"5.Statusline modification
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"5.Statusline modification                             "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set laststatus=2 "Always show statusline (deafault: only shown when files open > 1)
 set statusline=
@@ -140,8 +169,9 @@ set statusline+=\ %p%%
 set statusline+=\ %l:%c
 
 
-"""""""""""""""""""""""""""""""""
-"6.GitGutter and solarized options
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"6.GitGutter and solarized options                     " 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "Decrease time between updates (done for GitGutter) (default 4000, i.e. 4 seconds)
 set updatetime=250
