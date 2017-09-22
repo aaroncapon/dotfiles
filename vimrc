@@ -93,7 +93,8 @@ map <C-l> <C-W><C-l>
 "3.Formatting options                                  "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"Relative number lines
+"Number current line, and use relative number lines elsewhere
+set nu
 set rnu 
 "New tab formatting
 filetype plugin indent on
