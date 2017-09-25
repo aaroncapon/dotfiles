@@ -8,11 +8,11 @@
 "4. Search options                                     "
 "5. Stautsline modifications                           "
 "6. Plugins                                            "
-"6. Plugins                                            "
 "   - Plug                                             "
 "   - Gitgutter                                        "
 "   - Solarized                                        "
 "   - EasyAlign                                        "
+"7. Functions                                          "
 "                                                      "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -208,3 +208,16 @@ nmap ga <Plug>(EasyAlign)
 
 "Colour-coded brackets
 let g:rainbow_active = 1
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"7.Functions                                           " 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Function to toggle kTRUE and kFALSE in code
+function! Toggle()
+    let word = expand("<cword>")
+    if word == "kFALSE"
+        echo "kTRUE"
+    elseif word == "kTRUE"
+        echo "kFALSE"
+    endif
+endfunction
