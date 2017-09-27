@@ -217,7 +217,9 @@ function! Toggle()
     let word = expand("<cword>")
     if word == "kFALSE"
         echo "kTRUE"
+        return "kTRUE"
     elseif word == "kTRUE"
         echo "kFALSE"
+        return "kFALSE"
     endif
 endfunction
