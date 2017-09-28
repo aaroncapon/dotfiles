@@ -213,13 +213,23 @@ let g:rainbow_active = 1
 "7.Functions                                           " 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Function to toggle kTRUE and kFALSE in code
+""TODO!!!!! Need to restrict search to current line
 function! Toggle()
-    let word = expand("<cword>")
-    if word == "kFALSE"
+	let returnVal = search("kFALSE", "e", line("."), "stopline")
+    if returnVal != 0
         echo "kTRUE"
-        return "kTRUE"
-    elseif word == "kTRUE"
+		:normal caw kTRUE
+        return
+	let returnVal = search("kTRUE", "e", line("."), "stopline")
+    elseif returnVal != 0
         echo "kFALSE"
-        return "kFALSE"
+		:normal caw kFALSE
+        return 
+	else
+		echo "No flag found to toggle!"
+		return
     endif
 endfunction
+
+"Test line for above function
+"adjaskd ladsf kj kj kTRUE
