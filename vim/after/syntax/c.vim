@@ -330,14 +330,19 @@ if !exists("c_no_cern_root")
    syn keyword	cType		    AliESDEvent AliESDtrack AliESDVertex AliESDtrackCuts 
    syn keyword  cType           AliAODEvent AliAODTrack AliAODVertex
    syn keyword  cType           AliESDv0
+   syn keyword  cType           AliAnalysisTask
    syn keyword  cType           AliInputEventHandler AliAnalysisManager AliAnalysisGrid AliAnalysisAlien 
    syn keyword  cType           AliAnalysisDataContainer AliAnalysisTaskSE AliAnalysisCuts
    syn keyword	cType	        AliMCEventHandler AliMCEvent AliMCParticle AliAODMCParticle
    syn keyword  cType           AliMultSelection AliPID AliPIDResponse AliGenCocktailEventHeader
    syn keyword  cType           AliAnalysisTaskSimpleTreeMaker AliAnalysisTaskMLTreeMaker
 "Dielectron classes
-   syn keyword  cType           AliDielectron AliDielectronHistos 
+   syn keyword  cType           AliDielectron AliDielectronHistos AliAnalysisTaskMultiDielectron
    syn keyword  cType           AliDielectronCutGroup AliDielectronVarCuts AliDielectronMixingHandler
    syn keyword  cType           AliDielectronPID AliDielectronTrackCuts AliDielectronVarManager AliDielectronEvenCuts
    syn keyword  cType           AliDielectronTrackRotator LMEECutLib
+
+   syn keyword	cConstant       kRed kPink kBlue kMagenta kViolet kAzure kCyan kTeal kGreen kSpring kYellow
+"Custom colours
+   syn keyword	cConstant       kGREEN kMAGENTA kCYAN kORANGE
 endif
