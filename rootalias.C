@@ -3,15 +3,17 @@
 
 //Format 1D histograms
 //Just format colours
-void format1Dhist(TH1* hist, Int_t colour){
-    hist->SetMarkerStyle(21);
+void format1Dhist(TH1* hist, Int_t colour, Int_t markerStyle = 21, Int_t markerSize = 1){
+    hist->SetMarkerStyle(markerStyle);
     hist->SetMarkerColor(colour);
+    hist->SetMarkerSize(markerSize);
     hist->SetLineColor(colour);
 }
 //Format colours, and add titles
-void format1Dhist(TH1* hist, Int_t colour, TString xAxis, TString yAxis){
-    hist->SetMarkerStyle(21);
+void format1Dhist(TH1* hist, Int_t colour, TString xAxis, TString yAxis, Int_t markerStyle = 21, Int_t markerSize = 1){
+    hist->SetMarkerStyle(markerStyle);
     hist->SetMarkerColor(colour);
+    hist->SetMarkerSize(markerSize);
     hist->SetLineColor(colour);
     hist->GetYaxis()->SetTitle(yAxis);
     hist->GetXaxis()->SetTitle(xAxis);
