@@ -308,7 +308,7 @@ if !exists("c_no_cern_root")
    syn keyword	cType		    TH2 TH2C TH2D TH2F TH2I TH2S
    syn keyword	cType		    TH3 TH3C TH3D TH3F TH3I TH3S
    syn keyword	cType		    TF1 TF2 TF3
-   syn keyword	cType		    TBranch TStopwatch 
+   syn keyword	cType		    TBranch TStopwatch TNamed
    syn keyword	cType		    THStack TGraph TGraph2D TCanvas TRandom TLimit TLatex
    syn keyword	cType		    TNtuple TObject TTree TIter TKey TRandom2 TShape TPad TMacro
    syn keyword	cType           TString TLine TLegend TFile TDatime TRandom3 TMath
@@ -322,6 +322,7 @@ if !exists("c_no_cern_root")
    syn keyword	cType           Double_t Int_t Float_t Long_t Bool_t Byte_t
    syn keyword	cType      	    char_t Marker_t Double32_t Float16_t Long64_t
    syn keyword	cType           Short_t Stat_t Style_t Text_t UShort_t Option_t
+   syn keyword  cBoolean        kTRUE kFALSE
 "Additionally added ROOT classes
    syn keyword  cType           TTreeStream TAxis TGaxis TEfficiency
    syn keyword  cType           Char_t UChar_t 
@@ -340,7 +341,9 @@ if !exists("c_no_cern_root")
    syn keyword  cType           AliDielectron AliDielectronHistos AliAnalysisTaskMultiDielectron
    syn keyword  cType           AliDielectronCutGroup AliDielectronVarCuts AliDielectronMixingHandler
    syn keyword  cType           AliDielectronPID AliDielectronTrackCuts AliDielectronVarManager AliDielectronEvenCuts
-   syn keyword  cType           AliDielectronTrackRotator LMEECutLib
+   syn keyword  cType           AliDielectronTrackRotator LMEECutLib AliDielectronSignalMC 
+   syn keyword  cType           AliAnalysisFilter AliAnalysisTaskElectronEfficiency
+   syn keyword  cType           ESource EBranchRelation EJpsiRadiativ 
 
    syn keyword	cConstant       kRed kPink kBlue kMagenta kViolet kAzure kCyan kTeal kGreen kSpring kYellow
 "Custom colours
