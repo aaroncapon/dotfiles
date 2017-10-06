@@ -56,7 +56,10 @@
     std::cout << "Custom capitilised colours loaded." << std::endl;
 
     //Force kBird(blue/yellow) palette
-    gStyle->SetPalette(kBird);
+	//Checl if using AliPhysics which doesn't support anything
+	#if ROOT_VERSION_CODE >= ROOT_VERSION(6,00,0)
+    	gStyle->SetPalette(kBird);
+	#endif
 
 
     //Load array containing used run numbers (LHC16q)
