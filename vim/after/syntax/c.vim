@@ -324,8 +324,8 @@ if !exists("c_no_cern_root")
    syn keyword	cType           Short_t Stat_t Style_t Text_t UShort_t Option_t
    syn keyword  cBoolean        kTRUE kFALSE
 "Additionally added ROOT classes
-   syn keyword  cType           TTreeStream TAxis TGaxis TEfficiency
-   syn keyword  cType           Char_t UChar_t 
+   syn keyword  cType           TTreeStream TAxis TGaxis TEfficiency TObjArray
+   syn keyword  cType           Char_t UChar_t UInt_t
 "AliPhysics classes
    syn keyword  cType           AliVEventHandler AliVEvent AliVTrack AliVVertex AliVParticle
    syn keyword	cType		    AliESDEvent AliESDtrack AliESDVertex AliESDtrackCuts 
@@ -342,7 +342,7 @@ if !exists("c_no_cern_root")
    syn keyword  cType           AliDielectronCutGroup AliDielectronVarCuts AliDielectronMixingHandler
    syn keyword  cType           AliDielectronPID AliDielectronTrackCuts AliDielectronVarManager AliDielectronEvenCuts
    syn keyword  cType           AliDielectronTrackRotator LMEECutLib AliDielectronSignalMC 
-   syn keyword  cType           AliAnalysisFilter AliAnalysisTaskElectronEfficiency
+   syn keyword  cType           AliAnalysisFilter AliAnalysisTaskElectronEfficiency AliDielectronEventCuts
    syn keyword  cType           ESource EBranchRelation EJpsiRadiativ 
 
    syn keyword	cConstant       kRed kPink kBlue kMagenta kViolet kAzure kCyan kTeal kGreen kSpring kYellow
