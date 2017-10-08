@@ -102,6 +102,18 @@ TH1F* calcDiElecBackgr(const TH1F* posHist, const TH1F* negHist){
     return backgr;
 }
 
+TH1F* calcRawDiElecSpectrum(const TH1F* unlike, const TH1F* backgr, const TH1F* rFactor){
+
+	TH1F* rawSpectrum = dynamic_cast<TH1F*>(unlike->Clone("rawSpectrum"));
+
+	TH1F* correctedBackgr = dynamic_cast<TH1F*>(backgr->Clone("correctedBackgr"));
+	correctedBackgr->Multiply(rFactor);
+
+	rawSpectrum->Add(correctedBackgr, -1);
+
+	return rawSpectrum;
+}
+
 //Calculate significance, as per dielectron analysis definiton
 TH1F* calcDiElecSignificance(const TH1F* signal, const TH1F* backgr){
 
