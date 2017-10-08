@@ -46,10 +46,12 @@ void formatRatioPlot(TH1* hist, TString yAxis){
 TH1F* calcDiElecRfactor(const TH1F* posHist, const TH1F* negHist, const TH1F* unlikeHist, Bool_t calcRfactor){
     
     
-	TH1F* rFactor = dynamic_cast<TH1F*>(unlikeHist->Clone("rFactor"));;
-	rFactor->Reset(); //clear contentes. Clone used to make sure binning is identical.
+	TH1F* rFactor = dynamic_cast<TH1F*>(unlikeHist->Clone("rFactor"));
+
+	TH1F* denominator = dynamic_cast<TH1F*>(negHist->Clone("denominator"));
 
 	if(calcRfactor == kFALSE){
+		rFactor->Reset(); //clear contentes. Clone used to make sure binning is identical.
 		//Dummy R factor 
 		for(Int_t i = 1; i <= rFactor->GetNbinsX(); i++){
 			
@@ -57,6 +59,27 @@ TH1F* calcDiElecRfactor(const TH1F* posHist, const TH1F* negHist, const TH1F* un
 			rFactor->SetBinError(i, 0);
 		}
 	}
+	else{
+		Float_t valuePos, valueNeg;
+		Float_t errorPos, errorNeg;
+		for(Int_t i = 0; i <= posHist->GetNbinsX(); i++){
+			
+			valuePos = posHist->GetBinContent(i);
+			valueNeg = negHist->GetBinContent(i);
+
+			errorPos = posHist->GetBinError(i);
+			errorNeg = negHist->GetBinError(i);
+
+			denominator->SetBinContent(i, 2*TMath::Sqrt(valuePos*valueNeg));
+			denominator->SetBinError(i, TMath::Sqrt(errorPos) + TMath::Sqrt(errorNeg));
+		}
+	}
+
+	rFactor->Divide(denominator);
+
+	delete denominator;
+	//Manually determine bins values
+	/*
 	else{
 		//Real R factor	
 		Double_t unlikeVal, posVal, negVal;
@@ -76,7 +99,7 @@ TH1F* calcDiElecRfactor(const TH1F* posHist, const TH1F* negHist, const TH1F* un
 			rFactor->SetBinError(i, 0.0001);
 		}
 		
-	}
+	}*/
 
     return rFactor;
 }
