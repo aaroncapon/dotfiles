@@ -112,7 +112,10 @@ set breakindent
 set showbreak=\\\\\
 set textwidth =79
 set fileformat=unix
-set cursorline "Underline the current line
+"Underline the current line
+set cursorline 
+"Disable auto comment insertion on new lines
+set formatoptions -=cro
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -190,7 +193,7 @@ call plug#end()
 "--------GitGutter-------
 "Decrease time between updates (done for GitGutter) (default 4000, i.e. 4 seconds)
 set updatetime=250
-let g:gitgutter_highlight_lines=1
+"let g:gitgutter_highlight_lines=1
 set diffopt+=vertical "Gdiff split vertical not horizontal
 
 "--------Solarized-------

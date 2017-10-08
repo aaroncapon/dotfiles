@@ -43,6 +43,44 @@ void formatRatioPlot(TH1* hist, TString yAxis){
     return;
 }
 
+TH1F* calcDiElecRfactor(const TH1F* posHist, const TH1F* negHist, const TH1F* unlikeHist, Bool_t calcRfactor){
+    
+    
+	TH1F* rFactor = dynamic_cast<TH1F*>(unlikeHist->Clone("rFactor"));;
+	rFactor->Reset(); //clear contentes. Clone used to make sure binning is identical.
+
+	if(calcRfactor == kFALSE){
+		//Dummy R factor 
+		for(Int_t i = 1; i <= rFactor->GetNbinsX(); i++){
+			
+			rFactor->SetBinContent(i, 1);
+			rFactor->SetBinError(i, 0);
+		}
+	}
+	else{
+		//Real R factor	
+		Double_t unlikeVal, posVal, negVal;
+		Double_t unlikeErr, posErr, negErr;
+		for(Int_t i = 1; i <= rFactor->GetNbinsX(); i++){
+			
+			unlikeVal = unlikeHist->GetBinContent(i);
+			posVal    = posHist->GetBinContent(i);
+			negVal    = posHist->GetBinContent(i);
+
+			unlikeErr = unlikeHist->GetBinError(i);
+			posErr    = posHist->GetBinError(i);
+			negErr    = negHist->GetBinError(i);
+
+			rFactor->SetBinContent(i, unlikeVal/(2*TMath::Sqrt(posVal*negVal)));
+			//TODO: implement errors
+			rFactor->SetBinError(i, 0.0001);
+		}
+		
+	}
+
+    return rFactor;
+}
+
 //Calculate geomtric mean of like sign spectra for background calculation
 TH1F* calcDiElecBackgr(const TH1F* posHist, const TH1F* negHist){
 
