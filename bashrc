@@ -240,7 +240,7 @@ function EOG() {
 ###Open multiple pdf's sperately and ignore window warnings
 function PDF() {
 	for FILE in "$@"; do
-		evince "$FILE" 2>/dev/null &
+		zathura "$FILE" 2>/dev/null &
 	done
 }
 

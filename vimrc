@@ -140,9 +140,12 @@ set ignorecase
 "Disable ignorecase IF capitals used in search pattern
 set smartcase
 
+"Recursively search for ctags file up to root folder until one is found
+set tags+=./tags;/
+
 "Center page when searching for matching bracket
-nnoremap } }zz
-nnoremap { {zz
+"nnoremap } }zz
+"nnoremap { {zz
 
 "Show buffers, then press number of wanted buffer
 nnoremap <leader><leader> :buffers<cr>:buffer<space>
@@ -186,6 +189,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'junegunn/vim-easy-align'
 
 Plug 'luochen1990/rainbow'
+
 
 "Initialise plug system
 call plug#end()
