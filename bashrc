@@ -139,6 +139,8 @@ alias SSHHEPHY='ssh -X acapon@heplx01.oeaw.ac.at'
 
 alias WEATHER='curl wttr.in/vienna'
 
+alias DOTFILES='TITLESET "dotfiles" && cd ~/dotfiles/'
+
 #If on work computer
 if [ "$HOSTNAME" == "doubleAron" ]; then
 
