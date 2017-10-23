@@ -30,8 +30,11 @@ endif
 let mapleader=","
 
 highlight ColorColumn ctermbg=magenta
-call matchadd('ColorColumn', '\%81v', 100)
-
+"Put Colourcolum in augroup to ensure it is applied to all windows
+augroup colourZ
+	autocmd!
+	autocmd WinEnter,BufEnter * :call matchadd('ColorColumn', '\%81v', 100)
+augroup END
 
 "Require certain number of lines to be shown below/above cursor
 set scrolloff=4
@@ -41,7 +44,7 @@ set lazyredraw
 set splitright
 set splitbelow
 
-set go+=a
+set go+=Autoselect
 
 "Folding method based on indent of code
 set foldmethod=indent
@@ -52,12 +55,12 @@ set foldlevel=4
 "1.Mouse and clipboard settings                        "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-set clipboard+=unnamed
+set clipboard^=unnamed
 "Enable mouse usage
 set mouse=a 
 "Key to alievate shitty pasting in vim (press F5 before pasting into vim. Then F5 afterwards to resume normal indentation.
-nnoremap <F5> :set invpaste paste?<Enter>
-inoremap <F5> <C-O><F5>
+"nnoremap <F5> :set invpaste paste?<Enter>
+"inoremap <F5> <C-O><F5>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -86,11 +89,11 @@ inoremap <Right> <nop>
 inoremap <Up> <nop>
 inoremap <Down> <nop>
 "Shortcuts to switch through buffers with ctrl
-map <C-J> :bnext<CR>
-map <C-K> :bprev<CR>
+noremap <C-J> :bnext<CR>
+noremap <C-K> :bprev<CR>
 "Switch between open windows
-map <C-h> <C-W><C-h>
-map <C-l> <C-W><C-l>
+noremap <C-h> <C-W><C-h>
+noremap <C-l> <C-W><C-l>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -144,9 +147,12 @@ set ignorecase
 "Disable ignorecase IF capitals used in search pattern
 set smartcase
 
+"Recursively search for ctags file up to root folder until one is found
+set tags+=./tags;
+
 "Center page when searching for matching bracket
-nnoremap } }zz
-nnoremap { {zz
+"nnoremap } }zz
+"nnoremap { {zz
 
 "Show buffers, then press number of wanted buffer
 nnoremap <leader><leader> :buffers<cr>:buffer<space>
@@ -191,6 +197,7 @@ Plug 'junegunn/vim-easy-align'
 
 Plug 'luochen1990/rainbow'
 
+
 "Initialise plug system
 call plug#end()
 
@@ -209,9 +216,9 @@ colorscheme solarized
 "--------EasyAlgin--------
 "Alignment addon (easy align)
 " Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
+xnoremap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
+nnoremap ga <Plug>(EasyAlign)
 
 "Colour-coded brackets
 let g:rainbow_active = 1

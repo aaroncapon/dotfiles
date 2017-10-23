@@ -132,12 +132,17 @@ alias mv='mv -i' #Prevent clobbering
 
 alias TARZIP='tar -czvf' #c-create archive, z-compress archive with gzip, v-verbose, f-allow name specification of output
 
+alias CTAGS='ctags -R --languages=C++ --exclude=.git --exclude=log'
+
 #SSH aliases
 alias SSHSMI='ssh -X acapon@smilx0.smi.oeaw.ac.at'
 alias SFTPSMI='sftp acapon@smilx0.smi.oeaw.ac.at'
 alias SSHHEPHY='ssh -X acapon@heplx01.oeaw.ac.at'
 
 alias WEATHER='curl wttr.in/vienna'
+
+alias DOTFILES='TITLESET "dotfiles" && cd ~/dotfiles/'
+alias LATEXMK='latexmk -pvc'
 
 #If on work computer
 if [ "$HOSTNAME" == "doubleAron" ]; then
@@ -165,6 +170,8 @@ if [ "$HOSTNAME" == "doubleAron" ]; then
     alias CP='rsync -ah --progress'
 
     alias TMUXCHEATSHEET='less ~/.tmux_cheatsheet'
+
+	alias RRECHNUNG='libreoffice /home/aaron/Documents/SMI_shizzle/Formular_Reisekostenabrechnung_2017.ods 2>/dev/null &'
 
     ##Enable thefuck command
     eval $(thefuck --alias)
@@ -240,7 +247,7 @@ function EOG() {
 ###Open multiple pdf's sperately and ignore window warnings
 function PDF() {
 	for FILE in "$@"; do
-		evince "$FILE" 2>/dev/null &
+		zathura "$FILE" 2>/dev/null &
 	done
 }
 
