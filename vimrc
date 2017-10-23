@@ -43,6 +43,10 @@ set splitbelow
 
 set go+=a
 
+"Folding method based on indent of code
+set foldmethod=indent
+set foldlevel=4
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 "1.Mouse and clipboard settings                        "
