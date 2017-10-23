@@ -171,6 +171,8 @@ if [ "$HOSTNAME" == "doubleAron" ]; then
 
     alias TMUXCHEATSHEET='less ~/.tmux_cheatsheet'
 
+	alias RRECHNUNG='libreoffice /home/aaron/Documents/SMI_shizzle/Formular_Reisekostenabrechnung_2017.ods 2>/dev/null &'
+
     ##Enable thefuck command
     eval $(thefuck --alias)
     ##Add path to custom scripts and root
