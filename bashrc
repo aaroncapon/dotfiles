@@ -8,13 +8,13 @@ esac
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
-
+# Do not store the following command in history file
+export HISTIGNORE="&:ls:clear:exit:"
 # append to the history file, don't overwrite it
 shopt -s histappend
-
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=100000
+HISTFILESIZE=100000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -84,6 +84,8 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
 alias cp='cp -i' #Prevent clobbering
 alias mv='mv -i' #Prevent clobbering
 #Create rsync alias 
@@ -102,7 +104,11 @@ alias TARZIP='tar -czvf' #c-create archive, z-compress with gzip, f-specify outp
 alias CTAGS='ctags -R --languages=C++ --exclude=.git --exclude=log'
 alias LATEXMK='latexmk -pvc'
 
+#Git aliases
 alias GLOG="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%ar / %cr)%Creset' --abbrev-commit --date=relative"
+alias GS='git status'
+alias GC='git commit'
+alias GA='git add'
 
 alias WEATHER='curl wttr.in/vienna'
 
