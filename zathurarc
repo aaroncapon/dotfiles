@@ -1,0 +1,25 @@
+#Basic zathurarc 
+#       -> ${HOME}/.config/zathura/zathurarc
+set zoom-step 20
+set scroll-step 80
+
+#Copy and selection to system clipboard
+set selection-clipboard clipboard
+
+#Enable incremental search
+set incremental-search true
+
+#Map zoom
+map <C-i> zoom in
+map <C-o> zoom out
+
+#Begin showing two pages, not just title page
+set first-page-column 2
+
+#Only show basename of the file in window title
+set window-title-basename true
+
+#Show statusbar at bottom of page
+set guioptions s
+
+

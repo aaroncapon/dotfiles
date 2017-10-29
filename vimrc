@@ -72,6 +72,10 @@ set mouse=a
 nnoremap <expr> j v:count ? 'j' : 'gj'
 nnoremap <expr> k v:count ? 'k' : 'gk'
 
+"Remap H and L to SOF and EOL
+nnoremap H ^
+nnoremap L $
+
 "------- Prevent use of arrow keys  --------
 "Normal mode arrow keys
 nnoremap <Left> :echo "No left for you!"<CR>
@@ -148,7 +152,7 @@ set ignorecase
 set smartcase
 
 "Recursively search for ctags file up to root folder until one is found
-set tags+=./tags;
+set tags+=./tags,tags;
 
 "Center page when searching for matching bracket
 "nnoremap } }zz
@@ -216,9 +220,9 @@ colorscheme solarized
 "--------EasyAlgin--------
 "Alignment addon (easy align)
 " Start interactive EasyAlign in visual mode (e.g. vipga)
-xnoremap ga <Plug>(EasyAlign)
+xnoremap <leader>a <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nnoremap ga <Plug>(EasyAlign)
+nnoremap <leader>a <Plug>(EasyAlign)
 
 "Colour-coded brackets
 let g:rainbow_active = 1
