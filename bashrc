@@ -79,6 +79,9 @@ fi
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
+#Use vim style key bindings
+set -o vi
+
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
@@ -118,6 +121,10 @@ eval $(thefuck --alias)
 # Add an "alert" alias for long running commands.  Use like so:
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
+#Tmux aliases. Both followed by name of session
+alias tmux='tmux new -s'
+alias tmuxkill='tmux kill-session -t'
+
 #Load local alias definitions.
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
@@ -153,3 +160,4 @@ export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 
 echo "Did you know that:"; whatis $(ls /bin | shuf -n 1) # | grep '(1)'
+
