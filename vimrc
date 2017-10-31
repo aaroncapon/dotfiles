@@ -29,6 +29,9 @@ endif
 "Define new map leader
 let mapleader=","
 
+"Exit insert mode from homerow
+inoremap jk <Esc>
+
 highlight ColorColumn ctermbg=magenta
 "Put Colourcolum in augroup to ensure it is applied to all windows
 augroup colourZ
