@@ -29,6 +29,9 @@ endif
 "Define new map leader
 let mapleader=","
 
+"Exit insert mode from homerow
+inoremap jk <Esc>
+
 highlight ColorColumn ctermbg=magenta
 "Put Colourcolum in augroup to ensure it is applied to all windows
 augroup colourZ
@@ -163,7 +166,16 @@ nnoremap <leader><leader> :buffers<cr>:buffer<space>
 
 "Easy acces to Explore and Sexplore
 noremap <leader>e :Explore<cr>
-noremap <leader>s :Sexplore<cr>
+noremap <leader>s :Lexplore<cr>
+"Netrw options
+"Restrict window size
+let g:netrw_winsize = -28
+"Remove netrw banner
+let g:netrw_banner = 0
+"Use tree style listing for files
+let g:netrw_liststyle = 3
+"Directories on top and files below
+let g:netrw_sort_sequence = '[\/]$,*'
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
