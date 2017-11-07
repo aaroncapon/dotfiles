@@ -150,9 +150,9 @@ set wildmode=full
 "Allow fuzzy searching down through folders
 set path+=**
 "Case insenstive searching
-set ignorecase
+"set ignorecase
 "Disable ignorecase IF capitals used in search pattern
-set smartcase
+"set smartcase
 
 "Recursively search for ctags file up to root folder until one is found
 set tags+=./tags,tags;
@@ -207,6 +207,8 @@ Plug 'tpope/vim-fugitive'
 
 Plug 'airblade/vim-gitgutter'
 
+Plug 'tpope/vim-dispatch'
+
 Plug 'altercation/vim-colors-solarized'
 
 Plug 'junegunn/vim-easy-align'
@@ -232,9 +234,9 @@ colorscheme solarized
 "--------EasyAlgin--------
 "Alignment addon (easy align)
 " Start interactive EasyAlign in visual mode (e.g. vipga)
-xnoremap <leader>a <Plug>(EasyAlign)
+xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nnoremap <leader>a <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
 
 "Colour-coded brackets
 let g:rainbow_active = 1
