@@ -8,10 +8,6 @@
 "4. Search options                                     "
 "5. Stautsline modifications                           "
 "6. Plugins                                            "
-"   - Plug                                             "
-"   - Gitgutter                                        "
-"   - Solarized                                        "
-"   - EasyAlign                                        "
 "7. Functions                                          "
 "                                                      "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -52,6 +48,9 @@ set go+=Autoselect
 "Folding method based on indent of code
 set foldmethod=indent
 set foldlevel=4
+
+"Do not require save before switching buffers
+set hidden
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
