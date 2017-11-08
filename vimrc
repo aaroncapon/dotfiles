@@ -1,14 +1,16 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                                                      "
-"--------Sections---------                             "
-"0. General Options                                    "
-"1. Mouse and clipboard settings                       "
-"2. Movement keys                                      "
-"3. Formatting options                                 "
-"4. Search options                                     "
-"5. Stautsline modifications                           "
-"6. Plugins                                            "
-"7. Functions                                          "
+"                                                      "      
+"Plugin manager:[https://github.com/junegunn/vim-plug] "
+"                                                      " 
+"            --------Sections---------                 "
+"            0. General Options                        "
+"            1. Mouse and clipboard settings           "
+"            2. Movement keys                          "
+"            3. Formatting options                     "
+"            4. Search options                         "
+"            5. Stautsline modifications               "
+"            6. Plugins                                "
+"            7. Functions                              "
 "                                                      "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -60,9 +62,6 @@ set hidden
 set clipboard^=unnamed
 "Enable mouse usage
 set mouse=a 
-"Key to alievate shitty pasting in vim (press F5 before pasting into vim. Then F5 afterwards to resume normal indentation.
-"nnoremap <F5> :set invpaste paste?<Enter>
-"inoremap <F5> <C-O><F5>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -148,17 +147,10 @@ set wildmenu
 set wildmode=full
 "Allow fuzzy searching down through folders
 set path+=**
-"Case insenstive searching
-"set ignorecase
-"Disable ignorecase IF capitals used in search pattern
-"set smartcase
+
 
 "Recursively search for ctags file up to root folder until one is found
 set tags+=./tags,tags;
-
-"Center page when searching for matching bracket
-"nnoremap } }zz
-"nnoremap { {zz
 
 "Show buffers, then press number of wanted buffer
 nnoremap <leader><leader> :buffers<cr>:buffer<space>
