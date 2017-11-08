@@ -195,17 +195,12 @@ set statusline+=\ %l:%c
 call plug#begin('~/.vim/plugged/')
 
 Plug 'tpope/vim-fugitive'
-
 Plug 'airblade/vim-gitgutter'
-
 Plug 'tpope/vim-dispatch'
-
-Plug 'altercation/vim-colors-solarized'
-
+Plug 'tpope/vim-commentary'
 Plug 'junegunn/vim-easy-align'
-
 Plug 'luochen1990/rainbow'
-
+Plug 'NLKNguyen/papercolor-theme'
 
 "Initialise plug system
 call plug#end()
@@ -216,11 +211,8 @@ set updatetime=250
 "let g:gitgutter_highlight_lines=1
 set diffopt+=vertical "Gdiff split vertical not horizontal
 
-"--------Solarized-------
-let g:solarized_termcolors=256
-set t_Co=256 
+colorscheme PaperColor
 set background=dark
-colorscheme solarized
 
 "--------EasyAlgin--------
 "Alignment addon (easy align)
