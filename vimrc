@@ -49,7 +49,7 @@ set go+=Autoselect
 
 "Folding method based on indent of code
 set foldmethod=indent
-set foldlevel=4
+set foldlevel=99
 
 "Do not require save before switching buffers
 set hidden
@@ -191,7 +191,6 @@ set statusline+=\ %l:%c
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 "6.Plugins                                             " 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 call plug#begin('~/.vim/plugged/')
 
 Plug 'tpope/vim-fugitive'
@@ -221,30 +220,7 @@ xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
-"Colour-coded brackets
+"Colour-coded brackets (Rainbow)
 let g:rainbow_active = 1
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"7.Functions                                           " 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Function to toggle kTRUE and kFALSE in code
-""TODO!!!!! Need to restrict search to current line
-function! Toggle()
-	let returnVal = search("kFALSE", "e", line("."), "stopline")
-    if returnVal != 0
-        echo "kTRUE"
-		:normal caw kTRUE
-        return
-	let returnVal = search("kTRUE", "e", line("."), "stopline")
-    elseif returnVal != 0
-        echo "kFALSE"
-		:normal caw kFALSE
-        return 
-	else
-		echo "No flag found to toggle!"
-		return
-    endif
-endfunction
 
-"Test line for above function
-"adjaskd ladsf kj kj kTRUE
