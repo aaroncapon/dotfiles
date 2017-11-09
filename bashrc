@@ -122,7 +122,7 @@ eval $(thefuck --alias)
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 #Tmux aliases. Both followed by name of session
-alias tmux='tmux new -s'
+alias tmuxnew='tmux new -s'
 alias tmuxkill='tmux kill-session -t'
 
 #Load local alias definitions.
