@@ -24,6 +24,9 @@ if !exists("g:syntax_on")
     syntax enable
 endif
 
+"Detect filetype
+filetype on
+
 "Define new map leader
 let mapleader=","
 
@@ -108,17 +111,17 @@ noremap <C-l> <C-W><C-l>
 "Number current line, and use relative number lines elsewhere
 set nu
 set rnu 
-"New tab formatting
-filetype plugin indent on
-" show existing tab with 4 spaces width
-set tabstop=4
-" when indenting with '>', use 4 spaces width
-set shiftwidth=4
+"Show existing tab with 2 spaces width
+set tabstop=2
+"When indenting with '>', use 4 spaces width
+set shiftwidth=2
+"How many spaces are used in insert mode
+set softtabstop=2
 "Do not convert tabs to spaces
 set noexpandtab
 "Maintain indent from current line to next line
 set autoindent
-"wrapped lines follow indentation
+"Wrapped lines follow indentation
 set breakindent 
 "Show lnewrapping by indicating \\ for wrapped line
 set showbreak=\\\\\
@@ -212,6 +215,10 @@ set diffopt+=vertical "Gdiff split vertical not horizontal
 
 colorscheme PaperColor
 set background=dark
+"Alter colours of folds
+highlight Folded ctermbg=darkblue
+highlight Folded ctermfg=blue
+
 
 "--------EasyAlgin--------
 "Alignment addon (easy align)
@@ -223,4 +230,31 @@ nmap ga <Plug>(EasyAlign)
 "Colour-coded brackets (Rainbow)
 let g:rainbow_active = 1
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"7.Functions                                           " 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Function to toggle kTRUE and kFALSE in code
+""TODO!!!!! Need to restrict search to current line
+function! Toggle()
+	let cursor_pos = getpos('.')
+	normal! ^
+	let returnVal = search("kFALSE", "e", line("."), "stopline")
+	if returnVal != 0
+		echo "kTRUE"
+		normal! ciw kTRUE
+		call setpos('.', cursor_pos)
+		return
+	endif
+	let returnVal = search("kTRUE", "e", line("."), "stopline")
+	if returnVal != 0
+		echo "kFALSE"
+		normal! ciw kFALSE
+		call setpos('.', cursor_pos)
+		return 
+	endif
+	echo "ROOT boolean not found on line!"
+	call setpos('.', cursor_pos)
+	return
+endfunction
 
+nnoremap <leader>C :call Toggle()<CR>
