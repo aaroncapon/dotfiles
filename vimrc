@@ -1,18 +1,16 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                                                      "
-"--------Sections---------                             "
-"0. General Options                                    "
-"1. Mouse and clipboard settings                       "
-"2. Movement keys                                      "
-"3. Formatting options                                 "
-"4. Search options                                     "
-"5. Stautsline modifications                           "
-"6. Plugins                                            "
-"   - Plug                                             "
-"   - Gitgutter                                        "
-"   - Solarized                                        "
-"   - EasyAlign                                        "
-"7. Functions                                          "
+"                                                      "      
+"Plugin manager:[https://github.com/junegunn/vim-plug] "
+"                                                      " 
+"            --------Sections---------                 "
+"            0. General Options                        "
+"            1. Mouse and clipboard settings           "
+"            2. Movement keys                          "
+"            3. Formatting options                     "
+"            4. Search options                         "
+"            5. Stautsline modifications               "
+"            6. Plugins                                "
+"            7. Functions                              "
 "                                                      "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -51,7 +49,10 @@ set go+=Autoselect
 
 "Folding method based on indent of code
 set foldmethod=indent
-set foldlevel=4
+set foldlevel=99
+
+"Do not require save before switching buffers
+set hidden
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -61,9 +62,6 @@ set foldlevel=4
 set clipboard^=unnamed
 "Enable mouse usage
 set mouse=a 
-"Key to alievate shitty pasting in vim (press F5 before pasting into vim. Then F5 afterwards to resume normal indentation.
-"nnoremap <F5> :set invpaste paste?<Enter>
-"inoremap <F5> <C-O><F5>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -149,17 +147,10 @@ set wildmenu
 set wildmode=full
 "Allow fuzzy searching down through folders
 set path+=**
-"Case insenstive searching
-set ignorecase
-"Disable ignorecase IF capitals used in search pattern
-set smartcase
+
 
 "Recursively search for ctags file up to root folder until one is found
 set tags+=./tags,tags;
-
-"Center page when searching for matching bracket
-"nnoremap } }zz
-"nnoremap { {zz
 
 "Show buffers, then press number of wanted buffer
 nnoremap <leader><leader> :buffers<cr>:buffer<space>
@@ -200,19 +191,15 @@ set statusline+=\ %l:%c
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 "6.Plugins                                             " 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 call plug#begin('~/.vim/plugged/')
 
 Plug 'tpope/vim-fugitive'
-
 Plug 'airblade/vim-gitgutter'
-
-Plug 'altercation/vim-colors-solarized'
-
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-commentary'
 Plug 'junegunn/vim-easy-align'
-
 Plug 'luochen1990/rainbow'
-
+Plug 'NLKNguyen/papercolor-theme'
 
 "Initialise plug system
 call plug#end()
@@ -223,43 +210,17 @@ set updatetime=250
 "let g:gitgutter_highlight_lines=1
 set diffopt+=vertical "Gdiff split vertical not horizontal
 
-"--------Solarized-------
-let g:solarized_termcolors=256
-set t_Co=256 
+colorscheme PaperColor
 set background=dark
-colorscheme solarized
 
 "--------EasyAlgin--------
 "Alignment addon (easy align)
 " Start interactive EasyAlign in visual mode (e.g. vipga)
-xnoremap <leader>a <Plug>(EasyAlign)
+xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nnoremap <leader>a <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
 
-"Colour-coded brackets
+"Colour-coded brackets (Rainbow)
 let g:rainbow_active = 1
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"7.Functions                                           " 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Function to toggle kTRUE and kFALSE in code
-""TODO!!!!! Need to restrict search to current line
-function! Toggle()
-	let returnVal = search("kFALSE", "e", line("."), "stopline")
-    if returnVal != 0
-        echo "kTRUE"
-		:normal caw kTRUE
-        return
-	let returnVal = search("kTRUE", "e", line("."), "stopline")
-    elseif returnVal != 0
-        echo "kFALSE"
-		:normal caw kFALSE
-        return 
-	else
-		echo "No flag found to toggle!"
-		return
-    endif
-endfunction
 
-"Test line for above function
-"adjaskd ladsf kj kj kTRUE

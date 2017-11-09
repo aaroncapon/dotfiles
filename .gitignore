@@ -1,3 +1,19 @@
+#Plugin folder
 /vim/plugged/
+
+#Temporary files
+*.swp
+*.swo
+*~
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+
 *.netwr
-.*.swp
