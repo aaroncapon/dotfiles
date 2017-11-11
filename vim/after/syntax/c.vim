@@ -18,12 +18,14 @@
 " -----------------------------------------------------------------------------
 "  Highlight function names.
 " -----------------------------------------------------------------------------
-if !exists('g:cpp_no_function_highlight')
-    syn match    cCustomParen    "(" contains=cParen contains=cCppParen
-    syn match    cCustomFunc     "\w\+\s*(\@=" contains=cCustomParen
-    hi def link cCustomFunc  Function
+ if !exists('g:cpp_no_function_highlight')
+	syn match    cCustomParen    "?=(" contains=cParen,cCppParen
+	syn match    cCustomFunc     "\w\+\s*(\@=" contains=cCustomParen
+	syn match    cCustomScope    "::"
+	syn match    cCustomClass    "\w\+\s*::" contains=cCustomScope
+	hi def cCustomFunc  gui=bold guifg=yellowgreen
+	hi def link cCustomClass Function
 endif
-
 " -----------------------------------------------------------------------------
 "  Highlight member variable names.
 " -----------------------------------------------------------------------------
@@ -346,7 +348,7 @@ if !exists("c_no_cern_root")
    syn keyword  cType           AliAnalysisFilter AliAnalysisTaskElectronEfficiency AliDielectronEventCuts
    syn keyword  cType           ESource EBranchRelation EJpsiRadiativ 
 
-   syn keyword	cConstant       kRed kPink kBlue kMagenta kViolet kAzure kCyan kTeal kGreen kSpring kYellow
+   syn keyword	cConstant       kRed kPink kBlue kMagenta kViolet kAzure kCyan kTeal kGreen kSpring kYellow kGray kBlack kWhite
 "Custom colours
    syn keyword	cConstant       kGREEN kMAGENTA kCYAN kORANGE
 endif
