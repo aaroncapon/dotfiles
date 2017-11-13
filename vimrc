@@ -30,6 +30,11 @@ filetype on
 "Define new map leader
 let mapleader=","
 
+"Quick acces to vimrc 
+nnoremap <F5> :e $MYVIMRC<CR>
+"Reload vimrc
+nnoremap <F6> :so $MYVIMRC<CR>
+
 "Exit insert mode from homerow
 inoremap jk <Esc>
 
