@@ -239,7 +239,6 @@ let g:rainbow_active = 1
 "7.Functions                                           " 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Function to toggle kTRUE and kFALSE in code
-""TODO!!!!! Need to restrict search to current line
 function! Toggle()
 	let cursor_pos = getpos('.')
 	normal! ^
