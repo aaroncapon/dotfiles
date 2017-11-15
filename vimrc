@@ -210,6 +210,7 @@ Plug 'tpope/vim-commentary'
 Plug 'junegunn/vim-easy-align'
 Plug 'luochen1990/rainbow'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'octol/vim-cpp-enhanced-highlight'
 
 "Initialise plug system
 call plug#end()
@@ -236,6 +237,11 @@ nmap ga <Plug>(EasyAlign)
 
 "Colour-coded brackets (Rainbow)
 let g:rainbow_active = 1
+
+"------cpp highlighting -------"
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                7.Functions                           " 
