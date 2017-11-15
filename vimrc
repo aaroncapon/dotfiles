@@ -64,7 +64,7 @@ set hidden
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-"1.Mouse and clipboard settings                        "
+"             1.Mouse and clipboard settings           "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set clipboard^=unnamed
@@ -73,7 +73,7 @@ set mouse=a
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-"2.Movement keys                                       "
+"                 2.Movement keys                      "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "Allow single j and k movements to treat wrapped lines separately.
@@ -110,7 +110,7 @@ noremap <C-l> <C-W><C-l>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-"3.Formatting options                                  "
+"              3.Formatting options                    "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "Number current line, and use relative number lines elsewhere
@@ -137,9 +137,11 @@ set cursorline
 "Disable auto comment insertion on new lines
 set formatoptions -=cro
 
+"Set characters that indicate tabs, trailing space etc
+set listchars=tab:\|\ ,trail:~,eol:◊,extends:►,precedes:◄
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-"4.Search options                                      "
+"                 4.Search options                     "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "Highlight all matches when searching
@@ -178,7 +180,7 @@ let g:netrw_sort_sequence = '[\/]$,*'
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-"5.Statusline modification                             "
+"              5.Statusline modification               "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set laststatus=2 "Always show statusline (deafault: only shown when files open > 1)
@@ -197,7 +199,7 @@ set statusline+=\ %l:%c
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-"6.Plugins                                             " 
+"                  6.Plugins                           " 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged/')
 
@@ -236,7 +238,7 @@ nmap ga <Plug>(EasyAlign)
 let g:rainbow_active = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-"7.Functions                                           " 
+"                7.Functions                           " 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Function to toggle kTRUE and kFALSE in code
 function! Toggle()
