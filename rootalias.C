@@ -45,20 +45,20 @@ void formatRatioPlot(TH1* hist, TString yAxis){
 
 TH1F* calcDiElecRfactor(const TH1F* posHist, const TH1F* negHist, const TH1F* unlikeHist, Bool_t calcRfactor){
     
-    
+	//Clone used to make sure binning is identical.
 	TH1F* rFactor = dynamic_cast<TH1F*>(unlikeHist->Clone("rFactor"));
-
 	TH1F* denominator = dynamic_cast<TH1F*>(negHist->Clone("denominator"));
 
+	//Dummy R factor 
 	if(calcRfactor == kFALSE){
-		rFactor->Reset(); //clear contentes. Clone used to make sure binning is identical.
-		//Dummy R factor 
+		rFactor->Reset(); //clear contents.
+		Printf("hey");
 		for(Int_t i = 1; i <= rFactor->GetNbinsX(); i++){
-			
 			rFactor->SetBinContent(i, 1);
 			rFactor->SetBinError(i, 0.001);
 		}
 	}
+	//Real R factor
 	else{
 		Float_t valuePos, valueNeg;
 		Float_t errorPos, errorNeg;
@@ -73,35 +73,12 @@ TH1F* calcDiElecRfactor(const TH1F* posHist, const TH1F* negHist, const TH1F* un
 			denominator->SetBinContent(i, 2*TMath::Sqrt(valuePos*valueNeg));
 			denominator->SetBinError(i, TMath::Sqrt(errorPos) + TMath::Sqrt(errorNeg));
 		}
+		rFactor->Divide(denominator);
 	}
 
-	rFactor->Divide(denominator);
-
 	delete denominator;
-	//Manually determine bins values
-	/*
-	else{
-		//Real R factor	
-		Double_t unlikeVal, posVal, negVal;
-		Double_t unlikeErr, posErr, negErr;
-		for(Int_t i = 1; i <= rFactor->GetNbinsX(); i++){
-			
-			unlikeVal = unlikeHist->GetBinContent(i);
-			posVal    = posHist->GetBinContent(i);
-			negVal    = posHist->GetBinContent(i);
 
-			unlikeErr = unlikeHist->GetBinError(i);
-			posErr    = posHist->GetBinError(i);
-			negErr    = negHist->GetBinError(i);
-
-			rFactor->SetBinContent(i, unlikeVal/(2*TMath::Sqrt(posVal*negVal)));
-			//TODO: implement errors
-			rFactor->SetBinError(i, 0.0001);
-		}
-		
-	}*/
-
-    return rFactor;
+  return rFactor;
 }
 
 //Calculate geomtric mean of like sign spectra for background calculation
