@@ -56,7 +56,7 @@ TH1F* calcDiElecRfactor(const TH1F* posHist, const TH1F* negHist, const TH1F* un
 		for(Int_t i = 1; i <= rFactor->GetNbinsX(); i++){
 			
 			rFactor->SetBinContent(i, 1);
-			rFactor->SetBinError(i, 0);
+			rFactor->SetBinError(i, 0.001);
 		}
 	}
 	else{
