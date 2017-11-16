@@ -52,7 +52,6 @@ TH1F* calcDiElecRfactor(const TH1F* posHist, const TH1F* negHist, const TH1F* un
 	//Dummy R factor 
 	if(calcRfactor == kFALSE){
 		rFactor->Reset(); //clear contents.
-		Printf("hey");
 		for(Int_t i = 1; i <= rFactor->GetNbinsX(); i++){
 			rFactor->SetBinContent(i, 1);
 			rFactor->SetBinError(i, 0.001);
@@ -91,7 +90,7 @@ TH1F* calcDiElecBackgr(const TH1F* posHist, const TH1F* negHist){
     Float_t valuePos, valueNeg;
     Float_t errorPos, errorNeg;
     for(Int_t i = 0; i <= posHist->GetNbinsX(); i++){
-        
+
         valuePos = posHist->GetBinContent(i);
         valueNeg = negHist->GetBinContent(i);
         errorPos = posHist->GetBinError(i);
@@ -110,6 +109,27 @@ TH1F* calcRawDiElecSpectrum(const TH1F* unlike, const TH1F* backgr, const TH1F* 
 	correctedBackgr->Multiply(rFactor);
 
 	rawSpectrum->Add(correctedBackgr, -1);
+
+	return rawSpectrum;
+}
+
+TH1F* calcDiElecSpectrum(const TH1F* unlike, const TH1F* backgr, const TH1F* rFactor, TH1D* effCor = 0x0){
+
+	Double_t intLuminosity = 1;
+
+	//TODO: use vert. reconstruction and trigger efficiency
+
+	TH1F* rawSpectrum = dynamic_cast<TH1F*>(unlike->Clone("rawSpectrum"));
+
+	TH1F* correctedBackgr = dynamic_cast<TH1F*>(backgr->Clone("correctedBackgr"));
+	correctedBackgr->Multiply(rFactor);
+
+	rawSpectrum->Add(correctedBackgr, -1);
+
+	if(effCor){
+		Printf("Using efficiency correction!");
+		rawSpectrum->Divide(effCor);
+	}
 
 	return rawSpectrum;
 }
