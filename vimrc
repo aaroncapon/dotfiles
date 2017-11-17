@@ -138,7 +138,8 @@ set cursorline
 set formatoptions -=cro
 
 "Set characters that indicate tabs, trailing space etc
-set listchars=tab:\|\ ,trail:~,eol:◊,extends:►,precedes:◄
+set listchars=tab:\|\ ,trail:~   ",eol:◊,extends:►,precedes:◄
+set list
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                 4.Search options                     "
@@ -211,6 +212,8 @@ Plug 'junegunn/vim-easy-align'
 Plug 'luochen1990/rainbow'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 "Initialise plug system
 call plug#end()
