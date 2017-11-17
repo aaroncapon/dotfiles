@@ -163,3 +163,10 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 
 echo "Did you know that:"; whatis $(ls /bin | shuf -n 1) # | grep '(1)'
 
+#Fuzzy finder (github.com/junegunn/fzf.vim)
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+#Bash-insulter (github.com/hkbakke/bash-insulter)
+if [ -f /etc/bash.command-not-found ]; then
+    . /etc/bash.command-not-found
+fi
