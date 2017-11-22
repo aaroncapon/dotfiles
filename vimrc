@@ -188,15 +188,15 @@ set laststatus=2 "Always show statusline (deafault: only shown when files open >
 set statusline=
 set statusline+=%7*\[%n]
 set statusline+=%#PmenuSel#
-set statusline+=\F
-set statusline+=\{fugitive#statusline()}
+set statusline+=\%F
+set statusline+=\%{fugitive#statusline()}
 set statusline+=%=
 set statusline+=%#CursorColumn#
-set statusline+=\y
-set statusline+=\{&fileencoding?&fileencoding:&encoding}
+set statusline+=\%y
+set statusline+=\%{&fileencoding?&fileencoding:&encoding}
 set statusline+=\[%{&fileformat}\]
-set statusline+=\p%%
-set statusline+=\l:%c
+set statusline+=\%p%%
+set statusline+=\%l:%c
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
