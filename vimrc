@@ -1,7 +1,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                                                      "      
+"                                                      "
 "Plugin manager:[https://github.com/junegunn/vim-plug] "
-"                                                      " 
+"                                                      "
 "            --------Sections---------                 "
 "            0. General Options                        "
 "            1. Mouse and clipboard settings           "
@@ -30,7 +30,7 @@ filetype on
 "Define new map leader
 let mapleader=","
 
-"Quick acces to vimrc 
+"Quick acces to vimrc
 nnoremap <F5> :e $MYVIMRC<CR>
 "Reload vimrc
 nnoremap <F6> :so $MYVIMRC<CR>
@@ -69,7 +69,7 @@ set hidden
 
 set clipboard^=unnamed
 "Enable mouse usage
-set mouse=a 
+set mouse=a
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -115,7 +115,7 @@ noremap <C-l> <C-W><C-l>
 
 "Number current line, and use relative number lines elsewhere
 set nu
-set rnu 
+set rnu
 "Show existing tab with 2 spaces width
 set tabstop=2
 "When indenting with '>', use 4 spaces width
@@ -127,13 +127,13 @@ set noexpandtab
 "Maintain indent from current line to next line
 set autoindent
 "Wrapped lines follow indentation
-set breakindent 
+set breakindent
 "Show lnewrapping by indicating \\ for wrapped line
 set showbreak=\\\\\
 set textwidth =79
 set fileformat=unix
 "Underline the current line
-set cursorline 
+set cursorline
 "Disable auto comment insertion on new lines
 set formatoptions -=cro
 
@@ -146,7 +146,7 @@ set list
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "Highlight all matches when searching
-set hlsearch 
+set hlsearch
 nnoremap <leader><space> :nohlsearch<CR>
 set incsearch "Search as characters are entered
 "Enable autocompletion
@@ -188,19 +188,19 @@ set laststatus=2 "Always show statusline (deafault: only shown when files open >
 set statusline=
 set statusline+=%7*\[%n]
 set statusline+=%#PmenuSel#
-set statusline+=\ %F
-set statusline+=\ %{fugitive#statusline()}
+set statusline+=\F
+set statusline+=\{fugitive#statusline()}
 set statusline+=%=
 set statusline+=%#CursorColumn#
-set statusline+=\ %y
-set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+set statusline+=\y
+set statusline+=\{&fileencoding?&fileencoding:&encoding}
 set statusline+=\[%{&fileformat}\]
-set statusline+=\ %p%%
-set statusline+=\ %l:%c
+set statusline+=\p%%
+set statusline+=\l:%c
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                  6.Plugins                           " 
+"                  6.Plugins                           "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged/')
 
@@ -214,6 +214,7 @@ Plug 'NLKNguyen/papercolor-theme'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+"Plug 'w0rp/ale'
 
 "Initialise plug system
 call plug#end()
@@ -247,7 +248,7 @@ let g:cpp_member_variable_highlight = 1
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                7.Functions                           " 
+"                7.Functions                           "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Function to toggle kTRUE and kFALSE in code
 function! Toggle()
@@ -265,7 +266,7 @@ function! Toggle()
 		echo "kFALSE"
 		normal! ciw kFALSE
 		call setpos('.', cursor_pos)
-		return 
+		return
 	endif
 	echo "ROOT boolean not found on line!"
 	call setpos('.', cursor_pos)
@@ -273,3 +274,12 @@ function! Toggle()
 endfunction
 
 nnoremap <leader>C :call Toggle()<CR>
+
+"Function to removes trailing whitespaces
+function! TrimWhitespace()
+	let l:save = winsaveview()
+	%s/\s\+$//e
+	call winrestview(l:save)
+endfunction
+
+command! TrimWhitespace call TrimWhitespace()
