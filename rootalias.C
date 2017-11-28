@@ -44,12 +44,12 @@ void formatRatioPlot(TH1* hist, TString yAxis){
 }
 
 TH1F* calcDiElecRfactor(const TH1F* posHist, const TH1F* negHist, const TH1F* unlikeHist, Bool_t calcRfactor){
-    
+
 	//Clone used to make sure binning is identical.
 	TH1F* rFactor = dynamic_cast<TH1F*>(unlikeHist->Clone("rFactor"));
 	TH1F* denominator = dynamic_cast<TH1F*>(negHist->Clone("denominator"));
 
-	//Dummy R factor 
+	//Dummy R factor
 	if(calcRfactor == kFALSE){
 		rFactor->Reset(); //clear contents.
 		for(Int_t i = 1; i <= rFactor->GetNbinsX(); i++){
@@ -62,7 +62,7 @@ TH1F* calcDiElecRfactor(const TH1F* posHist, const TH1F* negHist, const TH1F* un
 		Float_t valuePos, valueNeg;
 		Float_t errorPos, errorNeg;
 		for(Int_t i = 0; i <= posHist->GetNbinsX(); i++){
-			
+
 			valuePos = posHist->GetBinContent(i);
 			valueNeg = negHist->GetBinContent(i);
 
@@ -138,7 +138,7 @@ TH1F* calcDiElecSpectrum(const TH1F* unlike, const TH1F* backgr, const TH1F* rFa
 TH1F* calcDiElecSignificance(const TH1F* signal, const TH1F* backgr){
 
     TH1F* significance = dynamic_cast<TH1F*>(signal->Clone("significance"));
-    
+
     Float_t errorSignal, errorBackgr;
     Float_t valueSignal, valueBackgr;
     Float_t binWidth;
@@ -176,13 +176,13 @@ TH1F* calcDiElecSignificance(const TH1F* signal, const TH1F* backgr){
             //std::cout << "Bin width: " << binWidth << ", Bin " << i << " value: " << preScaling/TMath::Sqrt(binWidth) << std::endl;
     }
 
-    
+
     return significance;
 }
 
 //Common TLatex objects
 TLatex* getTexTitle(Float_t xPos, Float_t yPos){
-    
+
     TLatex* tex = new TLatex(xPos, yPos, "ALICE Work in Progress");
     tex->SetNDC();
     tex->SetTextSize(0.04);
@@ -191,7 +191,7 @@ TLatex* getTexTitle(Float_t xPos, Float_t yPos){
     return tex;
 }
 TLatex* getTexSystem(Float_t xPos, Float_t yPos, Bool_t isMC = kFALSE){
-    
+
     TString description = "p-Pb, #sqrt{#it{s}_{NN}} = 5.02 TeV";
     if(isMC == kTRUE){
        description += ", DPMJET";
@@ -204,19 +204,29 @@ TLatex* getTexSystem(Float_t xPos, Float_t yPos, Bool_t isMC = kFALSE){
     return tex;
 }
 TLatex* getTexKinematics(Float_t xPos, Float_t yPos){
-    
-    TLatex* tex = new TLatex(xPos, yPos, "0.2 < p_{T} < 10 GeV/#it{c}, |#eta| < 0.8");
+
+    TLatex* tex = new TLatex(xPos, yPos, "0.2 < p_{T} < 5 GeV/#it{c}, |#eta| < 0.8");
     tex->SetNDC();
-    tex->SetTextSize(0.03);
+    tex->SetTextSize(0.02);
+    tex->SetTextFont(42);
+
+    return tex;
+}
+//TODO
+TLatex* getTexPairMom(Float_t xPos, Float_t yPos){
+
+    TLatex* tex = new TLatex(xPos, yPos, "p_{T}^{pair} < 10 GeV/#it{c}^{2}");
+    tex->SetNDC();
+    tex->SetTextSize(0.02);
     tex->SetTextFont(42);
 
     return tex;
 }
 TLatex* getTexPairCuts(Float_t xPos, Float_t yPos){
-    
-    TLatex* tex = new TLatex(xPos, yPos, "#theta_{ee} > 0.05 for m_{ee} < 0.05 GeV/#it{c}^{2}");
+
+    TLatex* tex = new TLatex(xPos, yPos, "#Phi_{V}^{pair} < #frac{3}{4}#pi for m_{ee} < 0.02 GeV/#it{c}^{2}");
     tex->SetNDC();
-    tex->SetTextSize(0.03);
+    tex->SetTextSize(0.02);
     tex->SetTextFont(42);
 
     return tex;
