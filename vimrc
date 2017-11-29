@@ -118,7 +118,7 @@ set nu
 set rnu
 "Show existing tab with 2 spaces width
 set tabstop=2
-"When indenting with '>', use 4 spaces width
+"When indenting with '>', use 2 spaces width
 set shiftwidth=2
 "How many spaces are used in insert mode
 set softtabstop=2
@@ -130,7 +130,7 @@ set autoindent
 set breakindent
 "Show lnewrapping by indicating \\ for wrapped line
 set showbreak=\\\\\
-set textwidth =79
+set textwidth =80
 set fileformat=unix
 "Underline the current line
 set cursorline
@@ -138,7 +138,7 @@ set cursorline
 set formatoptions -=cro
 
 "Set characters that indicate tabs, trailing space etc
-set listchars=tab:\|\ ,trail:~   ",eol:◊,extends:►,precedes:◄
+set listchars=trail:~
 set list
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -148,7 +148,8 @@ set list
 "Highlight all matches when searching
 set hlsearch
 nnoremap <leader><space> :nohlsearch<CR>
-set incsearch "Search as characters are entered
+"Search as characters are entered
+set incsearch
 "Enable autocompletion
 "longest inserts the longest common text
 "menu ensures a menu still pops up, even if only one selection is shown
