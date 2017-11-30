@@ -138,8 +138,8 @@ set cursorline
 set formatoptions -=cro
 
 "Set characters that indicate tabs, trailing space etc
-set listchars=trail:~
-set list
+"set listchars=trail:~
+"set list
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                 4.Search options                     "
