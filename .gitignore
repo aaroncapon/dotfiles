@@ -16,6 +16,6 @@
 *.la
 *.a
 
-.netrwhist
+/vim/.netrwhist
 
 tags
