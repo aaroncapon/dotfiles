@@ -213,12 +213,22 @@ TLatex* getTexKinematics(Float_t xPos, Float_t yPos){
     return tex;
 }
 //TODO
-TLatex* getTexPairMom(Float_t xPos, Float_t yPos){
+TLatex* getTexPairMom(Float_t xPos, Float_t yPos, Float_t textSize = 0.02, TString maxPt = 10.0, TString minPt = 0.0){
 
-    TLatex* tex = new TLatex(xPos, yPos, "p_{T}^{pair} < 10 GeV/#it{c}^{2}");
-    tex->SetNDC();
-    tex->SetTextSize(0.02);
-    tex->SetTextFont(42);
+	TString mid = "p_{T}^{pair} < ";
+	TString units = " GeV/#it{c}^{2}";
+	TLatex* tex = 0x0;
+	if(minPt = 0.0){
+		TString pairPtDescription = mid + maxPt + units;
+		tex = new TLatex(xPos, yPos, pairPtDescription);
+	}
+	else{
+		TString pairPtDescription = minPt + " " + mid + maxPt + units;
+		tex = new TLatex(xPos, yPos, pairPtDescription);
+	}
+	tex->SetNDC();
+	tex->SetTextSize(textSize);
+	tex->SetTextFont(42);
 
     return tex;
 }
