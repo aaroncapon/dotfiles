@@ -181,16 +181,16 @@ TH1F* calcDiElecSignificance(const TH1F* signal, const TH1F* backgr){
 }
 
 //Common TLatex objects
-TLatex* getTexTitle(Float_t xPos, Float_t yPos){
+TLatex* getTexTitle(Float_t xPos, Float_t yPos, Float_t textSize = 0.04){
 
     TLatex* tex = new TLatex(xPos, yPos, "ALICE Work in Progress");
     tex->SetNDC();
-    tex->SetTextSize(0.04);
+    tex->SetTextSize(textSize);
     tex->SetTextFont(42);
 
     return tex;
 }
-TLatex* getTexSystem(Float_t xPos, Float_t yPos, Bool_t isMC = kFALSE){
+TLatex* getTexSystem(Float_t xPos, Float_t yPos, Bool_t isMC = kFALSE, Float_t textSize = 0.03){
 
     TString description = "p-Pb, #sqrt{#it{s}_{NN}} = 5.02 TeV";
     if(isMC == kTRUE){
@@ -198,27 +198,26 @@ TLatex* getTexSystem(Float_t xPos, Float_t yPos, Bool_t isMC = kFALSE){
     }
     TLatex* tex = new TLatex(xPos, yPos, description);
     tex->SetNDC();
-    tex->SetTextSize(0.03);
+    tex->SetTextSize(textSize);
     tex->SetTextFont(42);
 
     return tex;
 }
-TLatex* getTexKinematics(Float_t xPos, Float_t yPos){
+TLatex* getTexKinematics(Float_t xPos, Float_t yPos, Float_t textSize = 0.02){
 
     TLatex* tex = new TLatex(xPos, yPos, "0.2 < p_{T} < 5 GeV/#it{c}, |#eta| < 0.8");
     tex->SetNDC();
-    tex->SetTextSize(0.02);
+    tex->SetTextSize(textSize);
     tex->SetTextFont(42);
 
     return tex;
 }
-//TODO
-TLatex* getTexPairMom(Float_t xPos, Float_t yPos, Float_t textSize = 0.02, TString maxPt = 10.0, TString minPt = 0.0){
+TLatex* getTexPairMom(Float_t xPos, Float_t yPos, Float_t textSize = 0.02, TString maxPt = "10", TString minPt = "0"){
 
 	TString mid = "p_{T}^{pair} < ";
-	TString units = " GeV/#it{c}^{2}";
+	TString units = " GeV/#it{c}";
 	TLatex* tex = 0x0;
-	if(minPt = 0.0){
+	if(minPt == "0"){
 		TString pairPtDescription = mid + maxPt + units;
 		tex = new TLatex(xPos, yPos, pairPtDescription);
 	}
@@ -230,13 +229,13 @@ TLatex* getTexPairMom(Float_t xPos, Float_t yPos, Float_t textSize = 0.02, TStri
 	tex->SetTextSize(textSize);
 	tex->SetTextFont(42);
 
-    return tex;
+	return tex;
 }
-TLatex* getTexPairCuts(Float_t xPos, Float_t yPos){
+TLatex* getTexPairCuts(Float_t xPos, Float_t yPos, Float_t textSize = 0.02){
 
     TLatex* tex = new TLatex(xPos, yPos, "#Phi_{V}^{pair} < #frac{3}{4}#pi for m_{ee} < 0.02 GeV/#it{c}^{2}");
     tex->SetNDC();
-    tex->SetTextSize(0.02);
+    tex->SetTextSize(textSize);
     tex->SetTextFont(42);
 
     return tex;
