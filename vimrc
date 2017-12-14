@@ -68,7 +68,7 @@ set hidden
 "             1.Mouse and clipboard settings           "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-set clipboard^=unnamed
+"set clipboard^=unnamed
 "Enable mouse usage
 set mouse=a
 
