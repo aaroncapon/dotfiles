@@ -53,7 +53,8 @@ set lazyredraw
 set splitright
 set splitbelow
 
-set go+=Autoselect
+"Enable simple copy/pasting from visual mode (when using vim GUI)
+set guioptions+=Autoselect
 
 "Folding method based on indent of code
 set foldmethod=indent
