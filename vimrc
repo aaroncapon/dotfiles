@@ -214,8 +214,8 @@ Plug 'junegunn/vim-easy-align'
 Plug 'luochen1990/rainbow'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+"Plug 'junegunn/fzf.vim'
 "Plug 'w0rp/ale'
 
 "Initialise plug system
@@ -252,7 +252,7 @@ let g:cpp_member_variable_highlight = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                7.Functions                           "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Function to toggle kTRUE and kFALSE in code
+"Function to toggle kTRUE and kFALSE
 function! Toggle()
 	let cursor_pos = getpos('.')
 	normal! ^
@@ -277,7 +277,7 @@ endfunction
 
 nnoremap <leader>C :call Toggle()<CR>
 
-"Function to removes trailing whitespaces
+"Function to remove trailing whitespaces
 function! TrimWhitespace()
 	let l:save = winsaveview()
 	%s/\s\+$//e
