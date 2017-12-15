@@ -212,8 +212,8 @@ Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-commentary'
 Plug 'junegunn/vim-easy-align'
 Plug 'luochen1990/rainbow'
-Plug 'NLKNguyen/papercolor-theme'
 Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'nanotech/jellybeans.vim'
 "Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 "Plug 'junegunn/fzf.vim'
 "Plug 'w0rp/ale'
@@ -227,8 +227,7 @@ set updatetime=250
 "let g:gitgutter_highlight_lines=1
 set diffopt+=vertical "Gdiff split vertical not horizontal
 
-colorscheme PaperColor
-set background=dark
+colorscheme jellybeans
 "Alter colours of folds
 highlight Folded ctermbg=darkblue
 highlight Folded ctermfg=blue
