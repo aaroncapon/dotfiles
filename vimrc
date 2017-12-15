@@ -138,9 +138,6 @@ set cursorline
 "Disable auto comment insertion on new lines
 set formatoptions -=cro
 
-"Set characters that indicate tabs, trailing space etc
-"set listchars=trail:~
-"set list
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                 4.Search options                     "
@@ -160,7 +157,6 @@ set wildmenu
 set wildmode=full
 "Allow fuzzy searching down through folders
 set path+=**
-
 
 "Recursively search for ctags file up to root folder until one is found
 set tags+=./tags,tags;
