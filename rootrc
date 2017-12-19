@@ -1,9 +1,0 @@
-
-#Collection of functions to be called at start of every ROOT session 
-#(formatting etc)
-Rint.Logon: ${HOME}/dotfiles/rootlogon.C
-
-
-#Collection of commonly used functions, as well as saner definitions of colours
-Rint.Load: ${HOME}/dotfiles/rootalias.C
-
