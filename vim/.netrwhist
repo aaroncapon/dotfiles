@@ -1,5 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/home/aaron/LHC16q/spectraPlotting/fromTrees'
 let g:netrw_dirhist_2='/home/aaron/dotfiles'
 let g:netrw_dirhist_3='/home/aaron/LHC16q/spectraPlotting'
+let g:netrw_dirhist_4='/home/aaron/LHC16q/PID_BDT'
+let g:netrw_dirhist_5='/home/aaron/LHC16q'
+let g:netrw_dirhist_6='/home/aaron/LHC16q/PID_BDT'
+let g:netrw_dirhist_7='/home/aaron/LHC16q'
