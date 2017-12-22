@@ -135,8 +135,8 @@ set textwidth =80
 set fileformat=unix
 "Underline the current line
 set cursorline
-"Disable auto comment insertion on new lines
-set formatoptions -=cro
+"Dsiable comment autowrapping, auto insertion of comment leader
+autocmd FileType * set formatoptions -=cro
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
