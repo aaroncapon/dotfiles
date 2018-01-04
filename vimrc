@@ -158,6 +158,13 @@ set wildmode=full
 "Allow fuzzy searching down through folders
 set path+=**
 
+"Always open quickfix window after :make, :grep, etc
+augroup openQuickFixWindow
+    autocmd!
+    autocmd QuickFixCmdPost [^l]* cwindow
+    autocmd QuickFixCmdPost l*    lwindow
+augroup END
+
 "Recursively search for ctags file up to root folder until one is found
 set tags+=./tags,tags;
 
