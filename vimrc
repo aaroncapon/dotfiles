@@ -261,14 +261,14 @@ function! Toggle()
 	let returnVal = search("kFALSE", "e", line("."), "stopline")
 	if returnVal != 0
 		echo "kTRUE"
-		normal! ciw kTRUE
+		.s/kFALSE/kTRUE/g
 		call setpos('.', cursor_pos)
 		return
 	endif
 	let returnVal = search("kTRUE", "e", line("."), "stopline")
 	if returnVal != 0
 		echo "kFALSE"
-		normal! ciw kFALSE
+		.s/kTRUE/kFALSE/g
 		call setpos('.', cursor_pos)
 		return
 	endif
