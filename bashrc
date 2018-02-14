@@ -106,6 +106,7 @@ alias TARZIP='tar -czvf' #c-create archive, z-compress with gzip, f-specify outp
 
 alias CTAGS='ctags -R --languages=C++ --exclude=.git --exclude=log'
 alias LATEXMK='latexmk -pvc'
+alias SOURCEBASH='source ~/.bashrc'
 
 #Git aliases
 alias GLOG="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%ar / %cr)%Creset' --abbrev-commit --date=relative"
