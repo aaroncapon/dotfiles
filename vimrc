@@ -63,6 +63,15 @@ set foldlevel=99
 "Do not require save before switching buffers
 set hidden
 
+"Enable persistant undo (within each reboot)
+"First create a tmp undo directory
+let s:undoDir = "/tmp/.undodir_" . $USER
+if !isdirectory(s:undoDir)
+	call mkdir(s:undoDir, "", 0700)
+endif
+let &undodir=s:undoDir
+set undofile
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 "             1.Mouse and clipboard settings           "
