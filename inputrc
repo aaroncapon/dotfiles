@@ -1,0 +1,14 @@
+
+#Cycle forward through tab complete options
+TAB: menu-complete
+
+#Perform partial completion on first tab press
+set menu-complete-display-prefix on
+
+set show-all-if-ambiguous on
+
+#Enable colours when using tab completion
+set colored-stats on
+
+
+
