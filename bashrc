@@ -82,6 +82,11 @@ fi
 #Use vim style key bindings
 set -o vi
 
+#Type directory name to cd into it
+shopt -s autocd
+#Enable ** globster 
+shopt -s globstar
+
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
