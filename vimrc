@@ -226,12 +226,19 @@ Plug 'junegunn/vim-easy-align'
 Plug 'luochen1990/rainbow'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'nanotech/jellybeans.vim'
+Plug 'easymotion/vim-easymotion'
 "Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 "Plug 'junegunn/fzf.vim'
 "Plug 'w0rp/ale'
 
 "Initialise plug system
 call plug#end()
+
+"--------Easy motion ------
+let g:EasyMotion_do_mapping = 0
+map <SPACE>w <Plug>(easymotion-w)
+map <SPACE>b <Plug>(easymotion-b)
+map <SPACE>s <Plug>(easymotion-s2)
 
 "--------GitGutter-------
 "Decrease time between updates (done for GitGutter) (default 4000, i.e. 4 seconds)
