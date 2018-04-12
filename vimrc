@@ -227,6 +227,8 @@ Plug 'luochen1990/rainbow'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'nanotech/jellybeans.vim'
 Plug 'easymotion/vim-easymotion'
+Plug 'semanser/vim-outdated-plugins'
+
 "Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 "Plug 'junegunn/fzf.vim'
 "Plug 'w0rp/ale'
