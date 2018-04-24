@@ -228,13 +228,14 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'nanotech/jellybeans.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'semanser/vim-outdated-plugins'
-
-"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-"Plug 'junegunn/fzf.vim'
-"Plug 'w0rp/ale'
-
+"Install fzf on system from Plug
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 "Initialise plug system
 call plug#end()
+
+"--------- fzf -----------
+nnoremap <leader>f :Files<CR>
 
 "--------Easy motion ------
 let g:EasyMotion_do_mapping = 0
