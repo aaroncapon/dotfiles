@@ -105,8 +105,6 @@ export EDITOR="vim"
 export PROMPT_DIRTRIM=3
 ##Change date formatting to ISO date format
 export TIME_STYLE=long-iso
-#Use w3m browser if using reddit terminal viewer
-alias RTV='export BROWSER=w3m && rtv'
 
 alias UPDATE='sudo apt update && sudo apt upgrade'
 alias TARZIP='tar -czvf' #c-create archive, z-compress with gzip, f-specify output name
