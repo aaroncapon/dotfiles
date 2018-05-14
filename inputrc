@@ -1,3 +1,5 @@
+#Use vim style key bindings
+set editing-mode vi
 
 #Cycle forward through tab complete options
 TAB: menu-complete
