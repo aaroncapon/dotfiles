@@ -17,5 +17,6 @@
 *.a
 
 ./vim/.netrwhist
+./vim/autoload/**
 
 tags
