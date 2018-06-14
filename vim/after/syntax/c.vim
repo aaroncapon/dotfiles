@@ -26,6 +26,7 @@ if !exists("c_no_cern_root")
 "Additionally added ROOT classes
    syn keyword  cType       TTreeStream TAxis TGaxis TEfficiency TObjArray TRatioPlot 
    syn keyword  cType       TParticlePDG TDatabasePDG TPaveStats THashList
+   syn keyword  cType       TGraphErrors TGraphAsymmErrors
    syn keyword  cType       Char_t UChar_t UInt_t ULong_t ULong64_t
 "AliPhysics classes
    syn keyword  cType       AliVEventHandler AliVEvent AliVTrack AliVVertex AliVParticle
