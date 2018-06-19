@@ -218,21 +218,21 @@ set statusline+=\%l:%c
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged/')
 
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-commentary'
-Plug 'junegunn/vim-easy-align'
-Plug 'luochen1990/rainbow'
-Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'nanotech/jellybeans.vim'
-Plug 'easymotion/vim-easymotion'
-Plug 'semanser/vim-outdated-plugins'
+Plug 'https://github.com/tpope/vim-fugitive'
+Plug 'https://github.com/airblade/vim-gitgutter'
+Plug 'https://github.com/tpope/vim-dispatch'
+Plug 'https://github.com/tpope/vim-commentary'
+Plug 'https://github.com/junegunn/vim-easy-align'
+Plug 'https://github.com/luochen1990/rainbow'
+Plug 'https://github.com/octol/vim-cpp-enhanced-highlight'
+Plug 'https://github.com/nanotech/jellybeans.vim'
+Plug 'https://github.com/easymotion/vim-easymotion'
+Plug 'https://github.com/semanser/vim-outdated-plugins'
 "Install fzf on system from Plug
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'tpope/vim-obsession'
-Plug 'vimwiki/vimwiki'
+Plug 'https://github.com/junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'https://github.com/junegunn/fzf.vim'
+Plug 'https://github.com/tpope/vim-obsession'
+Plug 'https://github.com/vimwiki/vimwiki'
 "Initialise plug system
 call plug#end()
 
