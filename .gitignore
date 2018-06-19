@@ -16,7 +16,7 @@
 *.la
 *.a
 
-./vim/.netrwhist
-./vim/autoload/**
+vim/.netrwhist
+vim/autoload/**
 
 tags
