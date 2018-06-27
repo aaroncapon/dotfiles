@@ -175,7 +175,14 @@ augroup openQuickFixWindow
 augroup END
 
 "Recursively search for ctags file up to root folder until one is found
-set tags+=./tags,tags;
+set tags+=./.ctags,.ctags;
+"Set vim to also look into other ctags files (common ROOT functions and
+"AliPhysics)
+set tags+=/home/aaron/AliPhysics-ROOT-scripts/.ctags
+set tags+=/home/aaron/alice/ali-master/.ctags "Needs manual compilation (for now)
+"Remap standard bindings to produce list if multiple matches
+"Otherwise jump striaght to definition
+nnoremap <C-]> g<C-]>
 
 "Show buffers, then press number of wanted buffer
 nnoremap <leader><leader> :buffers<cr>:buffer<space>
