@@ -183,6 +183,8 @@ set tags+=/home/aaron/alice/ali-master/.ctags "Needs manual compilation (for now
 "Remap standard bindings to produce list if multiple matches
 "Otherwise jump striaght to definition
 nnoremap <C-]> g<C-]>
+"Specify correct syntax highlighting of ctag files
+autocmd BufNewFile,BufRead .ctags set syntax=tags
 
 "Show buffers, then press number of wanted buffer
 nnoremap <leader><leader> :buffers<cr>:buffer<space>
