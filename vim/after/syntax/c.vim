@@ -25,7 +25,8 @@ if !exists("c_no_cern_root")
    syn keyword  cBoolean    kTRUE kFALSE
 "Additionally added ROOT classes
    syn keyword  cType       TTreeStream TAxis TGaxis TEfficiency TObjArray TRatioPlot 
-   syn keyword  cType       TParticlePDG TDatabasePDG TPaveStats THashList
+   syn keyword  cType       TParticlePDG TDatabasePDG TPaveStats TPaveText THashList
+	 syn keyword  cType				TCollection THnD TVectorD TProfile
    syn keyword  cType       TGraphErrors TGraphAsymmErrors
    syn keyword  cType       Char_t UChar_t UInt_t ULong_t ULong64_t
 "AliPhysics classes
@@ -43,7 +44,7 @@ if !exists("c_no_cern_root")
    syn keyword  cType       AliDielectron AliDielectronHistos AliAnalysisTaskMultiDielectron
    syn keyword  cType       AliDielectronCutGroup AliDielectronVarCuts AliDielectronMixingHandler
    syn keyword  cType       AliDielectronPID AliDielectronTrackCuts AliDielectronVarManager AliDielectronEvenCuts
-   syn keyword  cType       AliDielectronTrackRotator LMEECutLib AliDielectronSignalMC 
+   syn keyword  cType       AliDielectronTrackRotator LMEECutLib AliDielectronSignalMC AliDielectronV0Cuts
    syn keyword  cType       AliAnalysisFilter AliAnalysisTaskElectronEfficiency AliDielectronEventCuts
    syn keyword  cType       ESource EBranchRelation EJpsiRadiativ 
 
