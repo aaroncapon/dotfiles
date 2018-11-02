@@ -124,8 +124,8 @@ noremap <C-l> <C-W><C-l>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "Number current line, and use relative number lines elsewhere
-set nu
-set rnu
+" set nu
+" set rnu
 "Show existing tab with 2 spaces width
 set tabstop=2
 "When indenting with '>', use 2 spaces width
