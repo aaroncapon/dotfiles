@@ -21,7 +21,7 @@
 
 " If loop prevents mutliple calls to syntax on (can mess up highlighting)
 if !exists(" g:syntax_on" )
-    syntax enable
+	syntax enable
 endif
 
 " Detect filetype
@@ -144,6 +144,8 @@ set textwidth =80
 set fileformat=unix
 " Underline the current line
 set cursorline
+" Round indent to multiple of 'shiftwidth'
+set shiftround
 " Dsiable comment autowrapping, auto insertion of comment leader
 autocmd FileType * set formatoptions -=cro
 
@@ -169,9 +171,9 @@ set path+=**
 
 " Always open quickfix window after :make, :grep, etc
 augroup openQuickFixWindow
-    autocmd!
-    autocmd QuickFixCmdPost [^l]* cwindow
-    autocmd QuickFixCmdPost l*    lwindow
+	autocmd!
+	autocmd QuickFixCmdPost [^l]* cwindow
+	autocmd QuickFixCmdPost l*    lwindow
 augroup END
 
 " Recursively search for ctags file up to root folder until one is found
