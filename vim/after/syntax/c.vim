@@ -47,6 +47,7 @@ if !exists("c_no_cern_root")
    syn keyword  cType       AliDielectronTrackRotator LMEECutLib AliDielectronSignalMC AliDielectronV0Cuts
    syn keyword  cType       AliAnalysisFilter AliAnalysisTaskElectronEfficiency AliDielectronEventCuts
    syn keyword  cType       ESource EBranchRelation EJpsiRadiativ 
+	 syn keyword  cType       AliDielectronTMVACuts AliAnalysisTaskElectronEfficiencyV2
 
    syn keyword	cConstant   kRed kPink kBlue kMagenta kViolet kAzure kCyan kTeal kGreen 
 	 syn keyword  cConstant   kOrange kSpring kYellow kGray kBlack kWhite
