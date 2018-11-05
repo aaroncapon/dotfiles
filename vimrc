@@ -28,7 +28,7 @@ endif
 filetype on
 
 " Define new map leader
-let mapleader=" ," 
+let mapleader="," 
 
 " Quick acces to vimrc
 nnoremap <F5> :e $MYVIMRC<CR>
