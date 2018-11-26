@@ -27,9 +27,6 @@ endif
 " Detect filetype
 filetype on
 
-" Define new map leader
-let mapleader="," 
-
 " Quick acces to vimrc
 nnoremap <F5> :e $MYVIMRC<CR>
 " Reload vimrc
@@ -146,7 +143,8 @@ autocmd FileType * set formatoptions -=cro
 
 " Highlight all matches when searching
 set hlsearch
-nnoremap <leader><space> :nohlsearch<CR>
+" Mapping to turn of highlighted search results
+nnoremap <SPACE><CR> :nohlsearch<CR>
 " Search as characters are entered
 set incsearch
 " Enable autocompletion
@@ -179,11 +177,11 @@ nnoremap <C-]> g<C-]>
 autocmd BufNewFile,BufRead .ctags set syntax=tags
 
 " Show buffers, then press number of wanted buffer
-nnoremap <leader><leader> :buffers<cr>:buffer<space>
+nnoremap <,><,> :buffers<cr>:buffer<space>
 
 " Easy acces to Explore and Sexplore
-noremap <leader>e :Explore<cr>
-noremap <leader>s :Lexplore<cr>
+noremap <,>e :Explore<cr>
+noremap <,>s :Lexplore<cr>
 " Netrw options
 " Restrict window size
 let g:netrw_winsize = -28
@@ -237,7 +235,7 @@ Plug 'https://github.com/tpope/vim-obsession'
 call plug#end()
 
 " --------- fzf -----------
-nnoremap <leader>f :Files<CR>
+nnoremap <,>f :Files<CR>
 
 " --------Easy motion ------
 let g:EasyMotion_do_mapping = 0
@@ -298,7 +296,7 @@ function! Toggle()
 	return
 endfunction
 
-nnoremap <leader>C :call Toggle()<CR>
+nnoremap <,>C :call Toggle()<CR>
 
 " Function to remove trailing whitespaces
 function! TrimWhitespace()
