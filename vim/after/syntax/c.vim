@@ -33,7 +33,7 @@ if !exists("c_no_cern_root")
    syn keyword  cType       AliVEventHandler AliVEvent AliVTrack AliVVertex AliVParticle
    syn keyword	cType				AliESDEvent AliESDtrack AliESDVertex AliESDtrackCuts 
    syn keyword  cType       AliAODEvent AliAODTrack AliAODVertex AliMultSelectionTask
-   syn keyword  cType       AliESDv0
+   syn keyword  cType       AliESDv0 AliTOFPIDResponse
    syn keyword  cType       AliAnalysisTask
    syn keyword  cType       AliInputEventHandler AliAnalysisManager AliAnalysisGrid AliAnalysisAlien 
    syn keyword  cType       AliAnalysisDataContainer AliAnalysisTaskSE AliAnalysisCuts
