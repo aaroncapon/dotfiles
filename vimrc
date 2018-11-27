@@ -296,7 +296,7 @@ function! Toggle()
 	return
 endfunction
 
-nnoremap <,>C :call Toggle()<CR>
+nnoremap ,C :call Toggle()<CR>
 
 " Function to remove trailing whitespaces
 function! TrimWhitespace()
