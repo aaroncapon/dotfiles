@@ -177,11 +177,11 @@ nnoremap <C-]> g<C-]>
 autocmd BufNewFile,BufRead .ctags set syntax=tags
 
 " Show buffers, then press number of wanted buffer
-nnoremap <,><,> :buffers<cr>:buffer<space>
+nnoremap ,, :buffers<cr>:buffer<space>
 
 " Easy acces to Explore and Sexplore
-noremap <,>e :Explore<cr>
-noremap <,>s :Lexplore<cr>
+noremap ,e :Explore<cr>
+noremap ,s :Lexplore<cr>
 " Netrw options
 " Restrict window size
 let g:netrw_winsize = -28
@@ -235,7 +235,7 @@ Plug 'https://github.com/tpope/vim-obsession'
 call plug#end()
 
 " --------- fzf -----------
-nnoremap <,>f :Files<CR>
+nnoremap ,f :Files<CR>
 
 " --------Easy motion ------
 let g:EasyMotion_do_mapping = 0
