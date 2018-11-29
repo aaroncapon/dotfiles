@@ -7,9 +7,10 @@ esac
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
-HISTCONTROL=ignoreboth
+HISTCONTROL=ignoreboth:erasedups
+#HISTTIMEFORMAT="%d/%m/%y %T " ##NOTWORKING!!
 # Do not store the following command in history file
-export HISTIGNORE="&:ls:clear:exit:"
+export HISTIGNORE="&:clear:exit:cd*:ls*:GS:git push:git pull:.."
 # append to the history file, don't overwrite it
 shopt -s histappend
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
@@ -68,9 +69,6 @@ esac
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/dotfiles/dircolors && eval "$(dircolors -b ~/dotfiles/dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
@@ -118,6 +116,8 @@ alias GA='git add'
 alias GC='git commit'
 alias GPUSH='git push'
 alias GPULL='git pull'
+
+alias gdb='gdb -q'
 
 alias WEATHER='curl wttr.in/vienna'
 
