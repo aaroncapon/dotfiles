@@ -1,0 +1,15 @@
+
+# UI display settings
+set tab-size = 2 # Number of spaces to use when expanding tabs
+
+# User-defined commands
+# ---------------------
+# These commands allow to run shell commands directly from within Tig.
+# Unless otherwise specified, commands are run in the foreground with
+# their console output shown (as if '!' was specified). When multiple
+# command options are specified their behavior are combined, e.g. "?<git
+# commit" will prompt the user whether to execute the command and will
+# exit Tig after completion.
+
+# Copy commit hash to clipboard
+bind generic 9 !@sh -c "echo -n %(commit) | xclip -selection c"
