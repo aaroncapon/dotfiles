@@ -166,10 +166,10 @@ augroup END
 
 " Recursively search for ctags file up to root folder until one is found
 set tags+=./.ctags,.ctags;
-" Set vim to also look into other ctags files (common ROOT functions and
-" AliPhysics)
+" If working on C files, load extra tags files
 set tags+=/home/aaron/AliPhysics-ROOT-scripts/.ctags
-set tags+=/home/aaron/alice/ali-master/.ctags " Needs manual compilation (for now)
+set tags+=/home/aaron/alice/AliPhysics/.ctags 
+set tags+=/home/aaron/repositories/root/.ctags 
 " Remap standard bindings to produce list if multiple matches
 " Otherwise jump striaght to definition
 nnoremap <C-]> g<C-]>
@@ -273,36 +273,9 @@ let g:cpp_member_variable_highlight = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                7.Functions                           "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Function to toggle kTRUE and kFALSE
-function! Toggle()
-	let cursor_pos = getpos('.')
-	normal! ^
-	let returnVal = search("kFALSE", "e", line("."), "stopline")
-	if returnVal != 0
-		echo "kTRUE"
-		.s/kFALSE/kTRUE/g
-		call setpos('.', cursor_pos)
-		return
-	endif
-	let returnVal = search("kTRUE", "e", line("."), "stopline")
-	if returnVal != 0
-		echo "kFALSE"
-		.s/kTRUE/kFALSE/g
-		call setpos('.', cursor_pos)
-		return
-	endif
-	echo "ROOT boolean not found on line!"
-	call setpos('.', cursor_pos)
-	return
-endfunction
-
+" Function to toggle ROOT boolean
+" Need only have cursor on the same line
 nnoremap ,C :call Toggle()<CR>
 
-" Function to remove trailing whitespaces
-function! TrimWhitespace()
-	let l:save = winsaveview()
-	%s/\s\+$//e
-	call winrestview(l:save)
-endfunction
-
-command! TrimWhitespace call TrimWhitespace()
+" Trim all trailing white spaces
+command! TrimTrailingWhiteSpace call TrimTrailingWhiteSpace()
