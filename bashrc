@@ -10,7 +10,7 @@ esac
 HISTCONTROL=ignoreboth:erasedups
 #HISTTIMEFORMAT="%d/%m/%y %T " ##NOTWORKING!!
 # Do not store the following command in history file
-export HISTIGNORE="&:clear:exit:cd*:ls*:GS:git push:git pull:.."
+export HISTIGNORE="&:clear:exit:GS:git push:git pull:.."
 # append to the history file, don't overwrite it
 shopt -s histappend
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
@@ -113,7 +113,7 @@ alias SOURCEBASH='source ~/.bashrc'
 alias GLOG="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%ar / %cr)%Creset' --abbrev-commit --date=relative"
 alias GS='git status'
 alias GA='git add'
-alias GC='git commit'
+alias GC='git commit -v'
 alias GPUSH='git push'
 alias GPULL='git pull'
 
