@@ -53,4 +53,6 @@ if !exists("c_no_cern_root")
 	 syn keyword  cConstant   kOrange kSpring kYellow kGray kBlack kWhite
 "Custom colours
    syn keyword	cConstant   kGREEN kMAGENTA kCYAN kORANGE
+" Custom types and structures (LHC16q analysis)
+	 syn keyword  cType       analysisCuts16q cutVariations16q singleVarStructMVA pairVarStructMVA 
 endif
