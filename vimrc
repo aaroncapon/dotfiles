@@ -67,6 +67,8 @@ set hidden
 " set clipboard^=unnamed
 " Enable mouse usage
 set mouse=a
+" If pasting from default register, do not replace buffer with visual selection
+xnoremap <silent> p p:if v:register == '"'<Bar>let @@=@0<Bar>endif<cr>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
