@@ -1,6 +1,8 @@
 #Use vim style key bindings
 set editing-mode vi
 
+set completion-ignore-case On
+
 #Cycle forward through tab complete options
 TAB: menu-complete
 
@@ -12,5 +14,73 @@ set show-all-if-ambiguous on
 #Enable colours when using tab completion
 set colored-stats on
 
+#vi mode
+$if mode=vi
+# Keymaps in command mode
+set keymap vi-command
+Control-l: clear-screen
+# Text in terminal will be printed as comment
+"#": insert-comment
+"dw": kill-word
+"dd": kill-whole-line
+"cw": "dwi"
+"daw": "lbdW"
+"yaw": "lbyW"
+"caw": "lbcW"
+"diw": "lbdw"
+"yiw": "lbyw"
+"ciw": "lbcw"
+"da\"": "lF\"df\""
+"di\"": "lF\"lmtf\"d`t"
+"ci\"": "di\"i"
+"ca\"": "da\"i"
+"da'": "lF'df'"
+"di'": "lF'lmtf'd`t"
+"ci'": "di'i"
+"ca'": "da'i"
+"da`": "lF\`df\`"
+"di`": "lF\`lmtf\`d`t"
+"ci`": "di`i"
+"ca`": "da`i"
+"da(": "lF(df)"
+"di(": "lF(lmtf)d`t"
+"ci(": "di(i"
+"ca(": "da(i"
+"da)": "lF(df)"
+"di)": "lF(lmtf)d`t"
+"ci)": "di(i"
+"ca)": "da(i"
+"da{": "lF{df}"
+"di{": "lF{lmtf}d`t"
+"ci{": "di{i"
+"ca{": "da{i"
+"da}": "lF{df}"
+"di}": "lF{lmtf}d`t"
+"ci}": "di}i"
+"ca}": "da}i"
+"da[": "lF[df]"
+"di[": "lF[lmtf]d`t"
+"ci[": "di[i"
+"ca[": "da[i"
+"da]": "lF[df]"
+"di]": "lF[lmtf]d`t"
+"ci]": "di]i"
+"ca]": "da]i"
+"da<": "lF<df>"
+"di<": "lF<lmtf>d`t"
+"ci<": "di<i"
+"ca<": "da<i"
+"da>": "lF<df>"
+"di>": "lF<lmtf>d`t"
+"ci>": "di>i"
+"ca>": "da>i"
+"da/": "lF/df/"
+"di/": "lF/lmtf/d`t"
+"ci/": "di/i"
+"ca/": "da/i"
 
+# Keymap when in insert mode
+set keymap vi-insert
+Control-l: clear-screen
+$endif
 
