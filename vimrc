@@ -122,7 +122,7 @@ set shiftwidth=2
 " How many spaces are used in insert mode
 set softtabstop=2
 " Do not convert tabs to spaces
-set noexpandtab
+set expandtab
 " Maintain indent from current line to next line
 set autoindent
 " Wrapped lines follow indentation
