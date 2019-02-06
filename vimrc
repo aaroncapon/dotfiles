@@ -152,7 +152,10 @@ set incsearch
 " Enable autocompletion
 " longest inserts the longest common text
 " menu ensures a menu still pops up, even if only one selection is shown
-set completeopt=longest,menuone
+" preview shows function attributes in scratch buffer
+set completeopt=longest,menuone,preview
+" Auto close preview scratch buffer
+autocmd CompleteDone * pclose
 " Enables possible files to be listed when using tab completion with :e <filename-partial><<TAB>>
 set wildmenu
 set wildmode=full
