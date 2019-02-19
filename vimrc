@@ -121,7 +121,7 @@ set tabstop=2
 set shiftwidth=2
 " How many spaces are used in insert mode
 set softtabstop=2
-" Do not convert tabs to spaces
+" Convert tabs to spaces
 set expandtab
 " Maintain indent from current line to next line
 set autoindent
