@@ -34,7 +34,7 @@ if !exists("c_no_cern_root")
    syn keyword	cType				AliESDEvent AliESDtrack AliESDVertex AliESDtrackCuts 
    syn keyword  cType       AliAODEvent AliAODTrack AliAODVertex AliMultSelectionTask
    syn keyword  cType       AliESDv0 AliTOFPIDResponse
-   syn keyword  cType       AliAnalysisTask
+   syn keyword  cType       AliAnalysisTask TDirectoryFile
    syn keyword  cType       AliInputEventHandler AliAnalysisManager AliAnalysisGrid AliAnalysisAlien 
    syn keyword  cType       AliAnalysisDataContainer AliAnalysisTaskSE AliAnalysisCuts
    syn keyword	cType	      AliMCEventHandler AliMCEvent AliMCParticle AliAODMCParticle
@@ -48,7 +48,7 @@ if !exists("c_no_cern_root")
    syn keyword  cType       AliAnalysisFilter AliAnalysisTaskElectronEfficiency AliDielectronEventCuts
    syn keyword  cType       ESource EBranchRelation EJpsiRadiativ 
 	 syn keyword  cType       AliDielectronTMVACuts AliAnalysisTaskElectronEfficiencyV2
-
+   syn keyword  cType       AliAnalysisTaskJpsi AlimakeJPsiTree
    syn keyword	cConstant   kRed kPink kBlue kMagenta kViolet kAzure kCyan kTeal kGreen 
 	 syn keyword  cConstant   kOrange kSpring kYellow kGray kBlack kWhite
 "Custom colours
