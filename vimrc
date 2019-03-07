@@ -287,3 +287,6 @@ nnoremap ,C :call Toggle()<CR>
 
 " Trim all trailing white spaces
 command! TrimTrailingWhiteSpace call TrimTrailingWhiteSpace()
+
+" Edit contents of a register
+nnoremap <silent> cr :call ChangeReg()<CR>
