@@ -254,8 +254,8 @@ set updatetime=250
 " let g:gitgutter_highlight_lines=1
 set diffopt+=vertical " Gdiff split vertical not horizontal
 " Hunk mappings
-nmap <SPACE>ha <Plug>GitGutterStageHunk
-nmap <SPACE>hr <Plug>GitGutterUndoHunk
+nmap <SPACE>hs <Plug>GitGutterStageHunk
+nmap <SPACE>hu <Plug>GitGutterUndoHunk
 
 colorscheme jellybeans
 " Alter colours of folds
