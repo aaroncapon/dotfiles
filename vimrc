@@ -86,20 +86,20 @@ nnoremap L $
 
 " ------- Prevent use of arrow keys  --------
 " Normal mode arrow keys
-nnoremap <Left> :echo " No left for you!" <CR>
-nnoremap <Right> :echo " No right for you!" <CR>
-nnoremap <Up> :echo " No up for you!" <CR>
-nnoremap <Down> :echo " No down for you!" <CR>
+" nnoremap <Left> :echo " No left for you!" <CR>
+" nnoremap <Right> :echo " No right for you!" <CR>
+" nnoremap <Up> :echo " No up for you!" <CR>
+" nnoremap <Down> :echo " No down for you!" <CR>
 " Visual mode arrow keys
-vnoremap <Left> :<C-u>echo " No left for you!" <CR>
-vnoremap <Right> :<C-u>echo " No right for you!" <CR>
-vnoremap <Up> :<C-u>echo " No up for you!" <CR>
-vnoremap <Down> :<C-u>echo " No down for you!" <CR>
+" vnoremap <Left> :<C-u>echo " No left for you!" <CR>
+" vnoremap <Right> :<C-u>echo " No right for you!" <CR>
+" vnoremap <Up> :<C-u>echo " No up for you!" <CR>
+" vnoremap <Down> :<C-u>echo " No down for you!" <CR>
 " Insert mode arrow keys (doesn't work..?)
-inoremap <Left> <nop>
-inoremap <Right> <nop>
-inoremap <Up> <nop>
-inoremap <Down> <nop>
+" inoremap <Left> <nop>
+" inoremap <Right> <nop>
+" inoremap <Up> <nop>
+" inoremap <Down> <nop>
 " Shortcuts to switch through buffers with ctrl
 noremap <C-J> :bnext<CR>
 noremap <C-K> :bprev<CR>
@@ -287,3 +287,6 @@ nnoremap ,C :call Toggle()<CR>
 
 " Trim all trailing white spaces
 command! TrimTrailingWhiteSpace call TrimTrailingWhiteSpace()
+
+" Edit contents of a register
+nnoremap <silent> cr :call ChangeReg()<CR>
