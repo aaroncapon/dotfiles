@@ -27,6 +27,8 @@ endif
 " Detect filetype
 filetype on
 
+set ttymouse=xterm2
+
 " Quick acces to vimrc
 nnoremap <F5> :e $MYVIMRC<CR>
 " Reload vimrc
@@ -149,6 +151,8 @@ set hlsearch
 nnoremap <SPACE><CR> :nohlsearch<CR>
 " Search as characters are entered
 set incsearch
+"replace the word under cursor
+nnoremap <SPACE>* :%s/\<<c-r><c-w>\>//g<left><left>
 " Enable autocompletion
 " longest inserts the longest common text
 " menu ensures a menu still pops up, even if only one selection is shown
