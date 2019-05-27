@@ -26,20 +26,23 @@ if !exists("c_no_cern_root")
 "Additionally added ROOT classes
    syn keyword  cType       TTreeStream TAxis TGaxis TEfficiency TObjArray TRatioPlot 
    syn keyword  cType       TParticlePDG TDatabasePDG TPaveStats TPaveText THashList
-	 syn keyword  cType				TCollection THn THnF THnD TVectorD TProfile
+	 syn keyword  cType				TCollection THn THnF THnD TVectorD TProfile TProfile2D TProfile3D
    syn keyword  cType       TGraphErrors TGraphAsymmErrors TCut
    syn keyword  cType       Char_t UChar_t UInt_t ULong_t ULong64_t
 "AliPhysics classes
    syn keyword  cType       AliVEventHandler AliVEvent AliVTrack AliVVertex AliVParticle
    syn keyword	cType				AliESDEvent AliESDtrack AliESDVertex AliESDtrackCuts 
    syn keyword  cType       AliAODEvent AliAODTrack AliAODVertex AliMultSelectionTask
-   syn keyword  cType       AliESDv0 AliTOFPIDResponse
-   syn keyword  cType       AliAnalysisTask TDirectoryFile
+   syn keyword  cType       AliESDv0 AliTOFPIDResponse AliPhysicsSelection AliPhysicsSelectionTask
+   syn keyword  cType       AliMultiInputEventHandler AliAnalysisTaskPIDResponse
+   syn keyword  cType       AliPIDResponseInputHandler AliCentralitySelectionTask
+   syn keyword  cType       AliAnalysisTask TDirectoryFile AliAODHeader AliCentrality
    syn keyword  cType       AliInputEventHandler AliAnalysisManager AliAnalysisGrid AliAnalysisAlien 
    syn keyword  cType       AliAnalysisDataContainer AliAnalysisTaskSE AliAnalysisCuts
    syn keyword	cType	      AliMCEventHandler AliMCEvent AliMCParticle AliAODMCParticle
    syn keyword  cType       AliMultSelection AliPID AliPIDResponse AliGenCocktailEventHeader
    syn keyword  cType       AliAnalysisTaskSimpleTreeMaker AliAnalysisTaskMLTreeMaker
+   syn keyword  cType       AliFlowVector AliAnalysisTaskZDCEP AliEventplane
 "Dielectron classes
    syn keyword  cType       AliDielectron AliDielectronHistos AliAnalysisTaskMultiDielectron
    syn keyword  cType       AliDielectronCutGroup AliDielectronVarCuts AliDielectronMixingHandler
