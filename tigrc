@@ -14,36 +14,4 @@ set tab-size = 2 # Number of spaces to use when expanding tabs
 # Copy commit hash to clipboard
 bind generic 9 !@sh -c "echo -n %(commit) | xclip -selection c"
 # custom colorscheme
-color default        188     233     normal
-color cursor         white   235     bold
-color status         10      default
-color delimiter      magenta default
 color date           110     default
-color mode           cyan    default
-color id             167     default
-color overflow       167     default
-color header         222     default
-color section        215     default
-color directory      222     default
-color file           default default
-color grep.file      222     default
-color file-size      default default
-color line-number    59      default
-color title-blur     188     233
-color title-focus    188     233     bold
-color main-commit    33      default
-color main-tag       33      default bold
-color main-local-tag 33      default
-color main-remote    9       default
-color main-replace   cyan    default
-color main-tracked   215     default bold
-color main-ref       222     default
-color main-head      222     default bold
-color stat-none      default default
-color stat-staged    107     default
-color stat-unstaged  167     default
-color stat-untracked red     default
-color help-group     blue    default
-color help-action    yellow  default
-color diff-stat      215     default
-color graph-commit 104 default
