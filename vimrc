@@ -62,6 +62,11 @@ set foldlevel=99
 " Do not require save before switching buffers
 set hidden
 
+" Enable vim in-built man pager reader
+runtime ftplugin/man.vim
+" Bind to standard man page viewer (Shift+K)
+set keywordprg=:Man
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 "             1.Mouse and clipboard settings           "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
