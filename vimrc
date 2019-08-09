@@ -249,7 +249,10 @@ Plug 'https://github.com/tpope/vim-obsession'
 call plug#end()
 
 " --------- fzf -----------
+" Fuzzy find files (recursive from base directory vim launched from)
 nnoremap ,f :Files<CR>
+" Fuzzy find lines in current file
+nnoremap <SPACE>/ :BLines<CR>|
 
 " --------Easy motion ------
 let g:EasyMotion_do_mapping = 0
