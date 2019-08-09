@@ -38,7 +38,7 @@ case "$TERM" in
 esac
 
 
-#Check for colour compatibility
+# Check for colour compatibility
 if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
 # We have color support; assume it's compliant with Ecma-48
 # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
@@ -64,7 +64,7 @@ xterm*|rxvt*)
     ;;
 esac
 
-# enable color support of ls and also add handy aliases
+# Enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/dotfiles/dircolors && eval "$(dircolors -b ~/dotfiles/dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
@@ -77,12 +77,12 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 
-#Type directory name to cd into it
+# Type directory name to cd into it
 shopt -s autocd
-#Enable ** globster 
+# Enable ** globster 
 shopt -s globstar
 
-# some more ls aliases
+# Some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
@@ -91,14 +91,14 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias cp='cp -i' #Prevent clobbering
 alias mv='mv -i' #Prevent clobbering
-#Create rsync alias 
+# Create rsync alias 
 alias CP='rsync -ah --progress'
 
 export EDITOR="vim"
 
-#Trim shown directoy in prompt to last three levels
+# Trim shown directoy in prompt to last three levels
 export PROMPT_DIRTRIM=3
-##Change date formatting to ISO date format
+# Change date formatting to ISO date format
 export TIME_STYLE=long-iso
 
 alias UPDATE='sudo apt update && sudo apt upgrade'
@@ -108,7 +108,7 @@ alias CTAGS='ctags -R --languages=C++ --exclude=.git --exclude=log'
 alias LATEXMK='latexmk -pvc'
 alias SOURCEBASH='source ~/.bashrc'
 
-#Git aliases
+# Git aliases
 alias GLOG="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%ar / %cr)%Creset' --abbrev-commit --date=relative"
 alias GS='git status'
 alias GA='git add'
@@ -120,22 +120,22 @@ alias gdb='gdb -q'
 
 alias WEATHER='curl wttr.in/vienna'
 
-##Enable thefuck command
+# Enable thefuck command
 eval $(thefuck --alias)
 
 # Add an "alert" alias for long running commands.  Use like so:
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
-#Tmux aliases. Both followed by name of session
+# Tmux aliases. Both followed by name of session
 alias tmuxnew='tmux new -s'
 alias tmuxkill='tmux kill-session -t'
 
-#Load local alias definitions.
+# Load local alias definitions.
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-#Function to rename tab titles
+# Function to rename tab titles
 function TITLESET() {
   if [[ -z "$ORIG" ]]; then
     ORIG=$PS1
@@ -144,7 +144,7 @@ function TITLESET() {
   PS1=${ORIG}${TITLE}
 }
 
-# enable programmable completion features (you don't need to enable
+# Enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
 if ! shopt -oq posix; then
@@ -155,7 +155,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-#Vim function to check for session files in current directory
+# Vim function to check for session files in current directory
 function VIM() {
   if test $# -gt 0; then
     env vim "$@"
@@ -166,7 +166,7 @@ function VIM() {
   fi
 }
 
-#Colourised Man page
+# Colourised Man page
 export LESS_TERMCAP_mb=$'\E[01;34m'
 export LESS_TERMCAP_md=$'\E[01;34m'
 export LESS_TERMCAP_me=$'\E[0m'
@@ -177,18 +177,21 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 
 echo "Did you know that:"; whatis $(ls /bin | shuf -n 1) # | grep '(1)'
 
-#Fuzzy finder (github.com/junegunn/fzf.vim)
+# Fuzzy finder (github.com/junegunn/fzf.vim)
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-#Bash-insulter (github.com/hkbakke/bash-insulter)
+# Bash-insulter (github.com/hkbakke/bash-insulter)
 if [ -f /etc/bash.command-not-found ]; then
     . /etc/bash.command-not-found
 fi
 
-#Function extract for common file formats
+# Disable XON/XOFF (Ctrl-S/Ctrl-Q)
+stty -ixon
+
+# Function extract for common file formats
 function extract {
  if [ -z "$1" ]; then
-    # display usage if no parameters given
+    # Display usage if no parameters given
     echo "Usage: extract <path/file_name>.<zip|rar|bz2|gz|tar|tbz2|tgz|Z|7z|xz|ex|tar.bz2|tar.gz|tar.xz>"
     echo "       extract <path/file_name_1.ext> [path/file_name_2.ext] [path/file_name_3.ext]"
  else
