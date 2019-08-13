@@ -4,7 +4,7 @@
 
 
 if !exists("c_no_cern_root")
-   syn keyword	cType		    TH1 TH1C TH1D TH1F TH1I TH1K TH1S 
+   syn keyword	cType		    TH1 TH1C TH1D TH1F TH1I TH1K TH1S
    syn keyword	cType		    TH2 TH2C TH2D TH2F TH2I TH2S
    syn keyword	cType		    TH3 TH3C TH3D TH3F TH3I TH3S
    syn keyword	cType		    TF1 TF2 TF3
@@ -19,25 +19,25 @@ if !exists("c_no_cern_root")
    syn keyword	cType       TPostScript TSVG TPDF TImageDump THtml TColor TStyle TComplex TPRegexp
    syn keyword	cType       TObjArrayIter TMapIter TClass TEnv TGlobal TCint TROOT TDictionary TTime TTimer
    syn keyword  cType       TParticle TBits
-   syn keyword	cType       Double_t Int_t Float_t Long_t Bool_t Byte_t
+   syn keyword	cType       Double_t Int_t Float_t Long_t Bool_t Byte_t Size_t
    syn keyword	cType      	char_t Marker_t Double32_t Float16_t Long64_t
    syn keyword	cType       Short_t Stat_t Style_t Text_t UShort_t Option_t
    syn keyword  cBoolean    kTRUE kFALSE
 "Additionally added ROOT classes
-   syn keyword  cType       TTreeStream TAxis TGaxis TEfficiency TObjArray TRatioPlot 
+   syn keyword  cType       TTreeStream TAxis TGaxis TEfficiency TObjArray TRatioPlot
    syn keyword  cType       TParticlePDG TDatabasePDG TPaveStats TPaveText THashList
 	 syn keyword  cType				TCollection THn THnF THnD TVectorD TProfile TProfile2D TProfile3D
-   syn keyword  cType       TGraphErrors TGraphAsymmErrors TCut
+   syn keyword  cType       TGraphErrors TGraphAsymmErrors TCut TBrowser
    syn keyword  cType       Char_t UChar_t UInt_t ULong_t ULong64_t
 "AliPhysics classes
    syn keyword  cType       AliVEventHandler AliVEvent AliVTrack AliVVertex AliVParticle
-   syn keyword	cType				AliESDEvent AliESDtrack AliESDVertex AliESDtrackCuts 
+   syn keyword	cType				AliESDEvent AliESDtrack AliESDVertex AliESDtrackCuts
    syn keyword  cType       AliAODEvent AliAODTrack AliAODVertex AliMultSelectionTask
    syn keyword  cType       AliESDv0 AliTOFPIDResponse AliPhysicsSelection AliPhysicsSelectionTask
    syn keyword  cType       AliMultiInputEventHandler AliAnalysisTaskPIDResponse
    syn keyword  cType       AliPIDResponseInputHandler AliCentralitySelectionTask
    syn keyword  cType       AliAnalysisTask TDirectoryFile AliAODHeader AliCentrality
-   syn keyword  cType       AliInputEventHandler AliAnalysisManager AliAnalysisGrid AliAnalysisAlien 
+   syn keyword  cType       AliInputEventHandler AliAnalysisManager AliAnalysisGrid AliAnalysisAlien
    syn keyword  cType       AliAnalysisDataContainer AliAnalysisTaskSE AliAnalysisCuts
    syn keyword	cType	      AliMCEventHandler AliMCEvent AliMCParticle AliAODMCParticle
    syn keyword  cType       AliMultSelection AliPID AliPIDResponse AliGenCocktailEventHeader
@@ -53,7 +53,7 @@ if !exists("c_no_cern_root")
    syn keyword  cType       ESource EBranchRelation EJpsiRadiativ AliDielectronMC
 	 syn keyword  cType       AliDielectronTMVACuts AliAnalysisTaskElectronEfficiencyV2
    syn keyword  cType       AliAnalysisTaskJpsi AlimakeJPsiTree
-   syn keyword	cConstant   kRed kPink kBlue kMagenta kViolet kAzure kCyan kTeal kGreen 
+   syn keyword	cConstant   kRed kPink kBlue kMagenta kViolet kAzure kCyan kTeal kGreen
 	 syn keyword  cConstant   kOrange kSpring kYellow kGray kBlack kWhite
 "Custom colours
    syn keyword	cConstant   kGREEN kMAGENTA kCYAN kORANGE
