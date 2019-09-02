@@ -8,7 +8,7 @@
 "            2. Movement keys                           "
 "            3. Formatting options                      "
 "            4. Search options                          "
-"            5. Stautsline modifications                "
+"            5. Status line modifications                "
 "            6. Plugins                                 "
 "            7. Functions                               "
 "                                                       "
@@ -19,7 +19,7 @@
 "                  0.General Options                    "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" If loop prevents mutliple calls to syntax on (can mess up highlighting)
+" If loop prevents multiple calls to syntax on (can mess up highlighting)
 if !exists(" g:syntax_on" )
 	syntax enable
 endif
@@ -29,16 +29,16 @@ filetype on
 
 set ttymouse=xterm2
 
-" Quick acces to vimrc
+" Quick access to vimrc
 nnoremap <F5> :e $MYVIMRC<CR>
 " Reload vimrc
 nnoremap <F6> :so $MYVIMRC<CR>
 
-" Exit insert mode from homerow
+" Exit insert mode from home row
 inoremap jk <Esc>
 
 highlight ColorColumn ctermbg=magenta
-" Put Colourcolum in augroup to ensure it is applied to all windows
+" Put Colourcolumn in augroup to ensure it is applied to all windows
 augroup colourZ
 	autocmd!
 	autocmd WinEnter,BufEnter * :call matchadd('ColorColumn', '\%81v', 100)
@@ -83,7 +83,7 @@ xnoremap <silent> p p:if v:register == '"'<Bar>let @@=@0<Bar>endif<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Allow single j and k movements to treat wrapped lines separately.
-" Strict linewise movement resumed when preceeded with a count.
+" Strict line wise movement resumed when preceded with a count.
 nnoremap <expr> j v:count ? 'j' : 'gj'
 nnoremap <expr> k v:count ? 'k' : 'gk'
 
@@ -134,7 +134,7 @@ set expandtab
 set autoindent
 " Wrapped lines follow indentation
 set breakindent
-" Show lnewrapping by indicating \\ for wrapped line
+" Show line wrapping by indicating \\ for wrapped line
 set showbreak=\\\\\
 set textwidth =80
 set fileformat=unix
@@ -142,7 +142,7 @@ set fileformat=unix
 set cursorline
 " Round indent to multiple of 'shiftwidth'
 set shiftround
-" Dsiable comment autowrapping, auto insertion of comment leader
+" Disable comment auto wrapping, auto insertion of comment leader
 autocmd FileType * set formatoptions -=cro
 
 
@@ -185,7 +185,7 @@ set tags+=/home/aaron/AliPhysics-ROOT-scripts/.ctags
 set tags+=/home/aaron/alice/AliPhysics/.ctags 
 set tags+=/home/aaron/repositories/root/.ctags 
 " Remap standard bindings to produce list if multiple matches
-" Otherwise jump striaght to definition
+" Otherwise jump straight to definition
 nnoremap <C-]> g<C-]>
 " Specify correct syntax highlighting of ctag files
 autocmd BufNewFile,BufRead .ctags set syntax=tags
@@ -193,7 +193,7 @@ autocmd BufNewFile,BufRead .ctags set syntax=tags
 " Show buffers, then press number of wanted buffer
 nnoremap ,, :buffers<cr>:buffer<space>
 
-" Easy acces to Explore and Sexplore
+" Easy access to Explore and Sexplore
 noremap ,e :Explore<cr>
 noremap ,s :Lexplore<cr>
 " Netrw options
@@ -208,10 +208,10 @@ let g:netrw_sort_sequence = '[\/]$,*'
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-"              5.Statusline modification               "
+"              5.Status line modification               "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-set laststatus=2 " Always show statusline (deafault: only shown when files open > 1)
+set laststatus=2 " Always show status line (default: only shown when files open > 1)
 set statusline=
 set statusline+=%7*\[%n]
 set statusline+=%#PmenuSel#
@@ -276,7 +276,7 @@ highlight Folded ctermfg=blue
 
 
 " --------EasyAlgin--------
-" Alignment addon (easy align)
+" Alignment add-on (easy align)
 "  Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
 "  Start interactive EasyAlign for a motion/text object (e.g. gaip)
