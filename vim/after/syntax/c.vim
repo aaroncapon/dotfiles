@@ -42,8 +42,9 @@ if !exists("c_no_cern_root")
    syn keyword	cType	      AliMCEventHandler AliMCEvent AliMCParticle AliAODMCParticle
    syn keyword  cType       AliMultSelection AliPID AliPIDResponse AliGenCocktailEventHeader
    syn keyword  cType       AliAnalysisTaskSimpleTreeMaker AliAnalysisTaskMLTreeMaker
-   syn keyword  cType       AliFlowVector AliAnalysisTaskZDCEP AliEventplane
+   syn keyword  cType       AliFlowVector AliAnalysisTaskZDCEP AliEventplane AliESDInputHandler
    syn keyword  cType       AliAODInputHandler EVtxType AliTriggerAnalysis AliEventCuts
+   syn keyword  cType       TGenerator AliGenerator AliDecayerPythia
 "Dielectron classes
    syn keyword  cType       AliDielectron AliDielectronHistos AliAnalysisTaskMultiDielectron
    syn keyword  cType       AliDielectronCutGroup AliDielectronVarCuts AliDielectronMixingHandler
@@ -52,7 +53,7 @@ if !exists("c_no_cern_root")
    syn keyword  cType       AliAnalysisFilter AliAnalysisTaskElectronEfficiency AliDielectronEventCuts
    syn keyword  cType       ESource EBranchRelation EJpsiRadiativ AliDielectronMC
 	 syn keyword  cType       AliDielectronTMVACuts AliAnalysisTaskElectronEfficiencyV2
-   syn keyword  cType       AliAnalysisTaskJpsi AlimakeJPsiTree
+   syn keyword  cType       AliAnalysisTaskJpsi AlimakeJPsiTree AliAnalysisTaskLMeeCocktailMC
    syn keyword	cConstant   kRed kPink kBlue kMagenta kViolet kAzure kCyan kTeal kGreen
 	 syn keyword  cConstant   kOrange kSpring kYellow kGray kBlack kWhite
 "Custom colours
