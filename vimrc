@@ -67,6 +67,14 @@ runtime ftplugin/man.vim
 " Bind to standard man page viewer (Shift+K)
 set keywordprg=:Man
 
+" If any .add files have been updated, rebuild .spl file
+for d in glob('~/vim/spell/*.add', 1, 1)
+  if filereadable(d) && (!filereadable(d . '.spl') || getftime(d) > getftime(d . '.spl'))
+    exec 'mkspell! ' . fnameescape(d)
+    echo "Done gone built a library thang!"
+  endif
+endfor
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 "             1.Mouse and clipboard settings           "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""

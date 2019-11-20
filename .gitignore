@@ -1,10 +1,12 @@
-#Plugin folder
+# Plugin folder
 /vim/plugged/
 
-#Temporary files
+# Temporary files
 *.swp
 *.swo
 *~
+# Vim spelling binary
+*.spl
 
 # Compiled Dynamic libraries
 *.so
