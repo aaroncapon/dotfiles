@@ -253,6 +253,7 @@ Plug 'https://github.com/semanser/vim-outdated-plugins'
 Plug 'https://github.com/junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'https://github.com/junegunn/fzf.vim'
 Plug 'https://github.com/tpope/vim-obsession'
+Plug 'psliwka/vim-smoothie'
 " Initialise plug system
 call plug#end()
 
