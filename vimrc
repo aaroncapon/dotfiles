@@ -68,7 +68,7 @@ runtime ftplugin/man.vim
 set keywordprg=:Man
 
 " If any .add files have been updated, rebuild .spl file
-for d in glob('~/vim/spell/*.add', 1, 1)
+for d in glob('./vim/spell/*.add', 1, 1)
   if filereadable(d) && (!filereadable(d . '.spl') || getftime(d) > getftime(d . '.spl'))
     exec 'mkspell! ' . fnameescape(d)
     echo "Done gone built a library thang!"
