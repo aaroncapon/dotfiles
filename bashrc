@@ -120,6 +120,8 @@ alias gdb='gdb -q'
 
 alias WEATHER='curl wttr.in/vienna'
 
+alias holdmybeer='sudo'
+
 # Enable thefuck command
 eval $(thefuck --alias)
 

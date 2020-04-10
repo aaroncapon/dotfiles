@@ -151,7 +151,8 @@ set cursorline
 " Round indent to multiple of 'shiftwidth'
 set shiftround
 " Disable comment auto wrapping, auto insertion of comment leader
-autocmd FileType * set formatoptions -=cro
+autocmd FileType * set formatoptions -=croj
+" TODO: work out why 'j' does not fix commented line merging
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -247,13 +248,11 @@ Plug 'https://github.com/junegunn/vim-easy-align'
 Plug 'https://github.com/luochen1990/rainbow'
 Plug 'https://github.com/octol/vim-cpp-enhanced-highlight'
 Plug 'https://github.com/nanotech/jellybeans.vim'
-Plug 'https://github.com/easymotion/vim-easymotion'
 Plug 'https://github.com/semanser/vim-outdated-plugins'
 " Install fzf on system from Plug
 Plug 'https://github.com/junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'https://github.com/junegunn/fzf.vim'
 Plug 'https://github.com/tpope/vim-obsession'
-Plug 'psliwka/vim-smoothie'
 " Initialise plug system
 call plug#end()
 
@@ -262,12 +261,6 @@ call plug#end()
 nnoremap ,f :Files<CR>
 " Fuzzy find lines in current file
 nnoremap <SPACE>/ :BLines<CR>|
-
-" --------Easy motion ------
-let g:EasyMotion_do_mapping = 0
-map <SPACE>w <Plug>(easymotion-w)
-map <SPACE>b <Plug>(easymotion-b)
-map <SPACE>s <Plug>(easymotion-s2)
 
 " --------GitGutter-------
 " Decrease time between updates (done for GitGutter) (default 4000, i.e. 4 seconds)
