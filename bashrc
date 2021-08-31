@@ -140,17 +140,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Vim function to check for session files in current directory
-function VIM() {
-  if test $# -gt 0; then
-    env vim "$@"
-  elif test -f Session.vim; then
-    env vim -S
-  else
-    env vim -c Obsession
-  fi
-}
-
 # Colourised Man page
 export LESS_TERMCAP_mb=$'\E[01;34m'
 export LESS_TERMCAP_md=$'\E[01;34m'
