@@ -253,8 +253,21 @@ Plug 'https://github.com/semanser/vim-outdated-plugins'
 Plug 'https://github.com/junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'https://github.com/junegunn/fzf.vim'
 Plug 'https://github.com/tpope/vim-obsession'
+Plug 'https://github.com/vim-syntastic/syntastic'
 " Initialise plug system
 call plug#end()
+
+" ------ Syntastic --------
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_cpp_compiler_options = ' -std=c++17'
+let g:syntastic_python_checkers = ['flake8', 'pylint', 'python3']
 
 " --------- fzf -----------
 " Fuzzy find files (recursive from base directory vim launched from)
