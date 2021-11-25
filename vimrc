@@ -189,10 +189,6 @@ augroup END
 
 " Recursively search for ctags file up to root folder until one is found
 set tags+=./.ctags,.ctags;
-" If working on C files, load extra tags files
-set tags+=/home/aaron/AliPhysics-ROOT-scripts/.ctags
-set tags+=/home/aaron/alice/AliPhysics/.ctags 
-set tags+=/home/aaron/repositories/root/.ctags 
 " Remap standard bindings to produce list if multiple matches
 " Otherwise jump straight to definition
 nnoremap <C-]> g<C-]>
@@ -308,12 +304,8 @@ let g:cpp_member_variable_highlight = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                7.Functions                           "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Function to toggle ROOT boolean
-" Need only have cursor on the same line
-nnoremap ,C :call Toggle()<CR>
-
 " Trim all trailing white spaces
 command! TrimTrailingWhiteSpace call TrimTrailingWhiteSpace()
 
-" Edit contents of a register
+" Edit contents of a register (E.g. crq to edit the q register)
 nnoremap <silent> cr :call ChangeReg()<CR>
