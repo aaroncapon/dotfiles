@@ -195,3 +195,13 @@ function extract {
     done
 fi
 }
+
+# Set terminal title
+function TITLE(){
+  if [ -z "${PS1_BACK}" ]; then
+    PS1_BACK="${PS1}"
+  fi
+
+  TITLE="\[\e]0;$*\a\]"
+  PS1="${PS1_BACK}${TITLE}"
+}
