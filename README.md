@@ -10,7 +10,8 @@ Installation
 ------------
 
 ``` bash
-git clone git://github.com/aaroncapon/dotfiles ~/dotfiles
+cd
+git clone git://github.com/aaroncapon/dotfiles
 cd ~/dotfiles
 ./makesymlinks.sh
 ```
