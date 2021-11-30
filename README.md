@@ -11,7 +11,7 @@ Installation
 
 ``` bash
 cd
-git clone git://github.com/aaroncapon/dotfiles
+git clone https://gitlab.com/aaroncapon/dotfiles.git
 cd ~/dotfiles
 ./makesymlinks.sh
 ```
