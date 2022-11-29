@@ -41,7 +41,7 @@ highlight ColorColumn ctermbg=magenta
 " Put Colourcolumn in augroup to ensure it is applied to all windows
 augroup colourZ
 	autocmd!
-	autocmd WinEnter,BufEnter * :call matchadd('ColorColumn', '\%81v', 100)
+	autocmd WinEnter,BufEnter * :call matchadd('ColorColumn', '\%121v', 100)
 augroup END
 
 " Require certain number of lines to be shown below/above cursor
@@ -144,7 +144,7 @@ set autoindent
 set breakindent
 " Show line wrapping by indicating \\ for wrapped line
 set showbreak=\\\\\
-set textwidth =80
+set textwidth=120
 set fileformat=unix
 " Underline the current line
 set cursorline
