@@ -78,7 +78,7 @@ EXEC 01;32
 #.bat 01;32
 # Or if you want to colorize scripts even if they do not have the
 # executable bit actually set.
-#.sh 01;32
+# .sh 01;32
 #.csh 01;32
  # archives or compressed (bright red)
 .tar 01;31

@@ -71,6 +71,8 @@ if [ -x /usr/bin/dircolors ]; then
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
+    # Remove bold setting for executables
+    LS_COLORS=$LS_COLORS:'ex=0;32:' ; export LS_COLORS
 fi
 
 # colored GCC warnings and errors
