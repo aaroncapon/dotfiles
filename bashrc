@@ -113,6 +113,8 @@ alias GA='git add'
 alias GC='git commit -v'
 alias GPUSH='git push'
 alias GPULL='git pull'
+# Open all files with merge conflicts
+alias GFIX='vim $(git diff --name-only | uniq)'
 
 alias holdmybeer='sudo'
 
