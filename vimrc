@@ -154,7 +154,7 @@ set shiftround
 autocmd FileType * set formatoptions -=croj
 " TODO: work out why 'j' does not fix commented line merging
 
-
+autocmd BufRead,BufNewFile Singularity set ft=singularity
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                 4.Search options                     "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
