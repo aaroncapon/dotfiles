@@ -263,7 +263,8 @@ let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_cpp_compiler_options = ' -std=c++17'
-let g:syntastic_python_checkers = ['flake8', 'pylint', 'python3']
+let g:syntastic_python_pylint_rcfile = '~/.pylintrc'
+let g:syntastic_python_checkers = ['pylint', 'python3']
 
 " --------- fzf -----------
 " Fuzzy find files (recursive from base directory vim launched from)
