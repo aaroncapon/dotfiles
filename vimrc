@@ -8,9 +8,8 @@
 "            2. Movement keys                           "
 "            3. Formatting options                      "
 "            4. Search options                          "
-"            5. Status line modifications                "
-"            6. Plugins                                 "
-"            7. Functions                               "
+"            5. Plugins                                 "
+"            6. Functions                               "
 "                                                       "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -21,7 +20,7 @@
 
 " If loop prevents multiple calls to syntax on (can mess up highlighting)
 if !exists(" g:syntax_on" )
-	syntax enable
+    syntax enable
 endif
 
 " Detect filetype
@@ -40,8 +39,8 @@ inoremap jk <Esc>
 highlight ColorColumn ctermbg=magenta
 " Put Colourcolumn in augroup to ensure it is applied to all windows
 augroup colourZ
-	autocmd!
-	autocmd WinEnter,BufEnter * :call matchadd('ColorColumn', '\%121v', 100)
+    autocmd!
+    autocmd WinEnter,BufEnter * :call matchadd('ColorColumn', '\%121v', 100)
 augroup END
 
 " Require certain number of lines to be shown below/above cursor
@@ -182,9 +181,9 @@ set path+=**
 
 " Always open quickfix window after :make, :grep, etc
 augroup openQuickFixWindow
-	autocmd!
-	autocmd QuickFixCmdPost [^l]* cwindow
-	autocmd QuickFixCmdPost l*    lwindow
+    autocmd!
+    autocmd QuickFixCmdPost [^l]* cwindow
+    autocmd QuickFixCmdPost l*    lwindow
 augroup END
 
 " Recursively search for ctags file up to root folder until one is found
@@ -213,26 +212,7 @@ let g:netrw_sort_sequence = '[\/]$,*'
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-"              5.Status line modification               "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-set laststatus=2 " Always show status line (default: only shown when files open > 1)
-set statusline=
-set statusline+=%7*\[%n]
-set statusline+=%#PmenuSel#
-set statusline+=\%F
-set statusline+=\%{fugitive#statusline()}
-set statusline+=%=
-set statusline+=%#CursorColumn#
-set statusline+=\%y
-set statusline+=\%{&fileencoding?&fileencoding:&encoding}
-set statusline+=\[%{&fileformat}\]
-set statusline+=\%p%%
-set statusline+=\%l:%c
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                  6.Plugins                           "
+"                  5.Plugins                           "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged/')
 
@@ -249,22 +229,16 @@ Plug 'https://github.com/semanser/vim-outdated-plugins'
 Plug 'https://github.com/junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'https://github.com/junegunn/fzf.vim'
 Plug 'https://github.com/tpope/vim-obsession'
-Plug 'https://github.com/vim-syntastic/syntastic'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 " Initialise plug system
 call plug#end()
 
-" ------ Syntastic --------
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 0
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_cpp_compiler_options = ' -std=c++17'
-let g:syntastic_python_pylint_rcfile = '~/.pylintrc'
-let g:syntastic_python_checkers = ['pylint', 'python3']
+" Set this. Airline will handle the rest.
+let g:airline#extensions#ale#enabled = 1
+" Simplify section z (line and column position of cursor)
+au User AirlineAfterInit  :let g:airline_section_z = airline#section#create(['%3p%% %L:%3v'])
 
 " --------- fzf -----------
 " Fuzzy find files (recursive from base directory vim launched from)
@@ -297,13 +271,13 @@ nmap ga <Plug>(EasyAlign)
 " Colour-coded brackets (Rainbow)
 let g:rainbow_active = 1
 
-" ------cpp highlighting -------" 
+" ------cpp highlighting -------"
 let g:cpp_class_scope_highlight = 1
 let g:cpp_member_variable_highlight = 1
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                7.Functions                           "
+"                6.Functions                           "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Trim all trailing white spaces
 command! TrimTrailingWhiteSpace call TrimTrailingWhiteSpace()
