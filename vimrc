@@ -231,9 +231,14 @@ Plug 'https://github.com/junegunn/fzf.vim'
 Plug 'https://github.com/tpope/vim-obsession'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'dense-analysis/ale'
 " Initialise plug system
 call plug#end()
 
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
 " Set this. Airline will handle the rest.
 let g:airline#extensions#ale#enabled = 1
