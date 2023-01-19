@@ -245,7 +245,7 @@ let g:ale_sh_shellcheck_options = '-s bash'
 " Set this. Airline will handle the rest.
 let g:airline#extensions#ale#enabled = 1
 " Simplify section z (line and column position of cursor)
-au User AirlineAfterInit  :let g:airline_section_z = airline#section#create(['%3p%% %L:%3v'])
+au User AirlineAfterInit  :let g:airline_section_z = airline#section#create(['%l/%L', '  %v'])
 
 " --------- fzf -----------
 " Fuzzy find files (recursive from base directory vim launched from)
