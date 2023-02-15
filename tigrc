@@ -2,6 +2,19 @@
 # UI display settings
 set tab-size = 2 # Number of spaces to use when expanding tabs
 
+# custom colorscheme
+color date           110     default
+
+# Enable mouse uage
+set mouse = true
+
+# Default author to abbreviated
+set main-view-author = abbreviated
+
+# Custom date. Only show basic data. No need for exact time.
+set main-view-date = custom
+set main-view-date-format = "%Y-%m-%d"
+
 # User-defined commands
 # ---------------------
 # These commands allow to run shell commands directly from within Tig.
@@ -13,5 +26,4 @@ set tab-size = 2 # Number of spaces to use when expanding tabs
 
 # Copy commit hash to clipboard
 bind generic 9 !@sh -c "echo -n %(commit) | xclip -selection c"
-# custom colorscheme
-color date           110     default
+
