@@ -232,6 +232,7 @@ Plug 'https://github.com/tpope/vim-obsession'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'dense-analysis/ale'
+Plug 'cespare/vim-toml', { 'branch': 'main' }
 " Initialise plug system
 call plug#end()
 
