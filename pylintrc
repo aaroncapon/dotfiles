@@ -2,7 +2,7 @@
 max-line-length=100
 
 [MESSAGES CONTROL]
-disable=logging-fstring-interpolation,wrong-import-order
+disable=logging-fstring-interpolation,wrong-import-order,wrong-import-position
 
 
 [SIMILARITIES]
