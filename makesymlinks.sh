@@ -1,31 +1,33 @@
 #!/bin/bash
 ############################
-# .make.sh
-# This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
+# makesymlinks.sh
+# This script creates symlinks from the home directory to and files/folders defined in $FILES
 ############################
 
 ########## Variables
 
-dir=~/dotfiles                    # dotfiles directory
-olddir=~/dotfiles_old             # old dotfiles backup directory
-files="bashrc vimrc tmux.conf vim latexmkrc inputrc gdbinit tigrc pylintrc mypy.ini"    # list of files/folders to symlink in homedir
+DIR=~/dotfiles                    # dotfiles directory
+DIR_OLD=~/dotfiles_old            # old dotfiles backup directory
+FILES="bashrc vimrc tmux.conf vim latexmkrc inputrc gdbinit tigrc pylintrc mypy.ini"    # list of FILES/folders to symlink in homedir
 
 ##########
 
-# create dotfiles_old in homedir
-echo "Creating $olddir for backup of any existing dotfiles in ~"
-mkdir -p $olddir
-echo "...done"
+# Create dotfiles_old in homedir
+echo "Creating $DIR_OLD for backup of any existing dotfiles"
+mkdir -p $DIR_OLD
 
-# change to the dotfiles directory
-echo "Changing to the $dir directory"
-cd $dir || exit
-echo "...done"
+# Ensure we're in the dotfiles folder
+echo "Changing to the $DIR directory"
+cd $DIR || exit
 
-# move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks 
-for file in $files; do
-    echo "Moving any existing dotfiles from ~ to $olddir"
-    mv ~/."$file" ~/dotfiles_old/
-    echo "Creating symlink to $file in home directory."
-    ln -s $dir/"$file" ~/.$"file"
+# Move any existing dotfiles in $HOME to dotfiles_old directory, then create symlinks 
+for FILE in $FILES; do
+  if [ -e "$HOME/.$FILE" ]; then
+    echo "Found existing $FILE. Moving to $DIR_OLD"
+    mv ~/."$FILE" ~/dotfiles_old/
+    echo "  - replacing with symlink"
+  else
+    echo "Creating symlink for $FILE"
+  fi
+    ln -s "$DIR/$FILE" ~/."$FILE"
 done
