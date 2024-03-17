@@ -31,3 +31,14 @@ for FILE in $FILES; do
   fi
     ln -s "$DIR/$FILE" ~/."$FILE"
 done
+
+## Symlink pip.conf
+PIP_CONF="$HOME/.config/pip/pip.conf"
+if [ -e "${PIP_CONF}" ]; then
+  echo "Found existing pip.conf. Moving to $DIR_OLD"
+  mv ~/."${PIP_CONF}" ~/dotfiles_old/
+  echo "  - replacing with symlink"
+else
+  echo "Creating symlink for ${PIP_CONF}"
+fi
+ln -s "${DIR_FILE}/pip.conf" "${PIP_CONF}"
