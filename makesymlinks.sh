@@ -8,7 +8,7 @@
 
 DIR=~/dotfiles                    # dotfiles directory
 DIR_OLD=~/dotfiles_old            # old dotfiles backup directory
-FILES="bashrc vimrc tmux.conf vim latexmkrc inputrc gdbinit tigrc pylintrc mypy.ini Rprofile"    # list of FILES/folders to symlink in homedir
+FILES="bashrc vimrc tmux.conf vim latexmkrc inputrc gdbinit tigrc Rprofile"    # list of FILES/folders to symlink in homedir
 
 ##########
 
