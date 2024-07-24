@@ -128,6 +128,7 @@ noremap <C-l> <C-W><C-l>
 "              3.Formatting options                    "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+set fileformat=unix
 " Show existing tab with 2 spaces width
 set tabstop=2
 " When indenting with '>', use 2 spaces width
@@ -143,7 +144,8 @@ set breakindent
 " Show line wrapping by indicating \\ for wrapped line
 set showbreak=\\\\\
 set textwidth=120
-set fileformat=unix
+set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
+set list
 " Underline the current line
 set cursorline
 " Round indent to multiple of 'shiftwidth'
