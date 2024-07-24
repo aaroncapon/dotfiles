@@ -244,8 +244,12 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'dense-analysis/ale'
 Plug 'cespare/vim-toml', { 'branch': 'main' }
+Plug 'vimwiki/vimwiki'
 " Initialise plug system
 call plug#end()
+
+let g:vimwiki_list = [{'path':'~/Documents/vimwiki', 'syntax': 'markdown', 'ext':'md'}]
+let g:vimwiki_global_ext = 0
 
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_echo_msg_error_str = 'E'
