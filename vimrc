@@ -74,6 +74,8 @@ for d in glob('./vim/spell/*.add', 1, 1)
   endif
 endfor
 
+" Turn off creation of swap files
+set noswapfile
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 "             1.Mouse and clipboard settings           "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
