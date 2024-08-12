@@ -139,12 +139,14 @@ set softtabstop=2
 set expandtab
 " Maintain indent from current line to next line
 set autoindent
+" Don't wrap lines
+set nowrap
 " Wrapped lines follow indentation
 set breakindent
 " Show line wrapping by indicating \\ for wrapped line
 set showbreak=\\\\\
 set textwidth=120
-set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
+set listchars=tab:→\ ,eol:↲,nbsp:␣,space:·,trail:•,extends:⟩,precedes:⟨
 set list
 " Underline the current line
 set cursorline
@@ -282,7 +284,8 @@ colorscheme jellybeans
 " Alter colours of folds
 highlight Folded ctermbg=darkblue
 highlight Folded ctermfg=blue
-
+" Remove background colour from listchars
+hi SpecialKey ctermbg=NONE
 
 " --------EasyAlgin--------
 " Alignment add-on (easy align)
