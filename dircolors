@@ -192,11 +192,11 @@ EXEC 01;32
 # Colorised ROOT files
 .root 00;37
 # Neuroimaging files
-.nii 01;90
-.nii.gz 01;90
-.json 00;90
-.bval 01;90
-.bvec 01;90
+.nii 01;95
+.nii.gz 01;95
+.json 00;95
+.bval 00;95
+.bvec 00;95
 .mif 01;95
 # Python scripts
-.py 00;94
+.py 01;32
