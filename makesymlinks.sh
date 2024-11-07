@@ -41,4 +41,4 @@ if [ -e "${PIP_CONF}" ]; then
 else
   echo "Creating symlink for ${PIP_CONF}"
 fi
-ln -s "${DIR_FILE}/pip.conf" "${PIP_CONF}"
+ln -s "${DIR}/pip.conf" "${PIP_CONF}"
