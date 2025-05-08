@@ -1,6 +1,5 @@
 setlocal autoindent
 setlocal smartindent
-setlocal expandtab
-setlocal tabstop=2
-setlocal shiftwidth=2
-setlocal softtabstop=2
+setlocal tabstop=6
+setlocal shiftwidth=6
+setlocal softtabstop=6
